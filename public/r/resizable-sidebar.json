@@ -4,7 +4,7 @@
   "title": "Resizable Sidebar",
   "description": "Resizable Sidebar component.",
   "registryDependencies": [
-    "utils"
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

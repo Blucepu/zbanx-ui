@@ -4,9 +4,9 @@
   "title": "Tag List",
   "description": "Tag List component.",
   "registryDependencies": [
-    "badge",
-    "popover",
-    "utils"
+    "zbanx-ai/zbanx-ui/badge",
+    "zbanx-ai/zbanx-ui/popover",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

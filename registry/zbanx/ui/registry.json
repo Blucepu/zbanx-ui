@@ -18,7 +18,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -37,7 +37,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -57,8 +57,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -77,7 +77,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -97,7 +97,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -117,7 +117,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -137,8 +137,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -158,7 +158,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -178,8 +178,8 @@
         "react-day-picker"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -195,7 +195,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -215,8 +215,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -235,7 +235,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -255,7 +255,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -292,9 +292,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "dialog",
-        "input-group",
-        "utils"
+        "zbanx-ai/zbanx-ui/dialog",
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -314,8 +314,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -335,7 +335,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -354,7 +354,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -373,9 +373,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "label",
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/label",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -394,7 +394,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -413,10 +413,10 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "textarea",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/textarea",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -436,7 +436,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -455,7 +455,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -475,8 +475,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -492,7 +492,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -512,7 +512,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -532,8 +532,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -549,7 +549,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -568,7 +568,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -587,7 +587,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -607,8 +607,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -627,7 +627,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -646,7 +646,7 @@
         "react-resizable-panels"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -665,7 +665,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -685,7 +685,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -704,7 +704,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -724,8 +724,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -746,14 +746,14 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "separator",
-        "sheet",
-        "skeleton",
-        "tooltip",
-        "use-mobile",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/use-mobile",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -769,7 +769,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -788,7 +788,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -826,7 +826,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -845,7 +845,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -861,7 +861,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -881,7 +881,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -897,7 +897,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -917,8 +917,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "toggle",
-        "utils"
+        "zbanx-ai/zbanx-ui/toggle",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -938,7 +938,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -957,7 +957,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -977,8 +977,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -994,7 +994,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -1013,7 +1013,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -1050,8 +1050,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -1070,7 +1070,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -1086,7 +1086,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {

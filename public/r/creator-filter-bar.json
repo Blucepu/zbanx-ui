@@ -7,14 +7,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "creator-filter-core",
-    "creator-filter-ui",
-    "icon-button",
-    "overflow-tags-badge",
-    "popover",
-    "separator",
-    "utils"
+    "zbanx-ai/zbanx-ui/button",
+    "zbanx-ai/zbanx-ui/creator-filter-core",
+    "zbanx-ai/zbanx-ui/creator-filter-ui",
+    "zbanx-ai/zbanx-ui/icon-button",
+    "zbanx-ai/zbanx-ui/overflow-tags-badge",
+    "zbanx-ai/zbanx-ui/popover",
+    "zbanx-ai/zbanx-ui/separator",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

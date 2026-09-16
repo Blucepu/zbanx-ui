@@ -7,9 +7,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "overflow-tags-badge",
-    "tooltip",
-    "utils"
+    "zbanx-ai/zbanx-ui/overflow-tags-badge",
+    "zbanx-ai/zbanx-ui/tooltip",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

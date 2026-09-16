@@ -34,10 +34,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "popover",
-        "scroll-area",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -56,10 +56,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "checkbox",
-        "collapsible",
-        "input",
-        "utils"
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -78,10 +78,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -100,10 +100,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -123,8 +123,8 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -140,8 +140,8 @@
         }
       ],
       "registryDependencies": [
-        "button",
-        "popover"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/popover"
       ]
     },
     {
@@ -157,8 +157,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "oss-image"
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/oss-image"
       ],
       "dependencies": [
         "lucide-react"
@@ -177,9 +177,9 @@
         }
       ],
       "registryDependencies": [
-        "popover",
-        "scroll-area",
-        "utils"
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -195,9 +195,9 @@
         }
       ],
       "registryDependencies": [
-        "badge",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -213,8 +213,8 @@
         }
       ],
       "registryDependencies": [
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -264,9 +264,9 @@
         }
       ],
       "registryDependencies": [
-        "overflow-tags-badge",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "lucide-react"
@@ -335,19 +335,19 @@
         }
       ],
       "registryDependencies": [
-        "creator-filter-core",
-        "data-select",
-        "grouped-check-panel",
-        "number-preset-select",
-        "number-range-select",
-        "tag-input",
-        "button",
-        "input",
-        "select",
-        "sheet",
-        "checkbox",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/data-select",
+        "zbanx-ai/zbanx-ui/grouped-check-panel",
+        "zbanx-ai/zbanx-ui/number-preset-select",
+        "zbanx-ai/zbanx-ui/number-range-select",
+        "zbanx-ai/zbanx-ui/tag-input",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "lucide-react"
@@ -371,14 +371,14 @@
         }
       ],
       "registryDependencies": [
-        "button",
-        "creator-filter-core",
-        "creator-filter-ui",
-        "icon-button",
-        "overflow-tags-badge",
-        "popover",
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "lucide-react"
@@ -417,20 +417,20 @@
         }
       ],
       "registryDependencies": [
-        "avatar",
-        "badge",
-        "button",
-        "checkbox",
-        "clamped-text",
-        "country-flag",
-        "link",
-        "number",
-        "oss-image",
-        "skeleton",
-        "tag-list",
-        "tooltip",
-        "utils",
-        "video-cover"
+        "zbanx-ai/zbanx-ui/avatar",
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/video-cover"
       ],
       "dependencies": [
         "lucide-react",
@@ -450,15 +450,15 @@
         }
       ],
       "registryDependencies": [
-        "creator-list-item",
-        "tag-list",
-        "video-cover",
-        "country-flag",
-        "button",
-        "sheet",
-        "tooltip",
-        "link",
-        "utils"
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/video-cover",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "lucide-react",
@@ -478,18 +478,18 @@
         }
       ],
       "registryDependencies": [
-        "button",
-        "card",
-        "checkbox",
-        "creator-filter-bar",
-        "creator-filter-core",
-        "creator-filter-ui",
-        "creator-list-item",
-        "creator-profile-drawer",
-        "empty",
-        "icon-button",
-        "number",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/creator-filter-bar",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/creator-profile-drawer",
+        "zbanx-ai/zbanx-ui/empty",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "lucide-react",
@@ -512,8 +512,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -549,10 +549,10 @@
         }
       ],
       "registryDependencies": [
-        "button",
-        "checkbox",
-        "skeleton",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "@tanstack/react-query",
@@ -572,11 +572,11 @@
         }
       ],
       "registryDependencies": [
-        "button",
-        "sheet",
-        "spinner",
-        "switch",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/switch",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     },
     {
@@ -595,8 +595,8 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "select",
-        "utils"
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/utils"
       ]
     }
   ]

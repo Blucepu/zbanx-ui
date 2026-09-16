@@ -7,8 +7,8 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "select",
-    "utils"
+    "zbanx-ai/zbanx-ui/select",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

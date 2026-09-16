@@ -12,7 +12,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -31,7 +31,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -51,8 +51,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -71,7 +71,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -91,7 +91,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -111,7 +111,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -131,8 +131,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -152,7 +152,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -172,8 +172,8 @@
         "react-day-picker"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -189,7 +189,7 @@
       "title": "Card",
       "description": "Card component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -209,8 +209,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -229,7 +229,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -249,7 +249,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -286,9 +286,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "dialog",
-        "input-group",
-        "utils"
+        "zbanx-ai/zbanx-ui/dialog",
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -308,8 +308,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -329,7 +329,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -348,7 +348,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -367,9 +367,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "label",
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/label",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -388,7 +388,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -407,10 +407,10 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "textarea",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/textarea",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -430,7 +430,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -449,7 +449,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -469,8 +469,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -486,7 +486,7 @@
       "title": "Label",
       "description": "Label component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -506,7 +506,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -526,8 +526,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -543,7 +543,7 @@
       "title": "Message",
       "description": "Message component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -562,7 +562,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -581,7 +581,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -601,8 +601,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -621,7 +621,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -640,7 +640,7 @@
         "react-resizable-panels"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -659,7 +659,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -679,7 +679,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -698,7 +698,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -718,8 +718,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -740,14 +740,14 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "separator",
-        "sheet",
-        "skeleton",
-        "tooltip",
-        "use-mobile",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/use-mobile",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -763,7 +763,7 @@
       "title": "Skeleton",
       "description": "Skeleton component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -782,7 +782,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -820,7 +820,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -839,7 +839,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -855,7 +855,7 @@
       "title": "Table",
       "description": "Table component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -875,7 +875,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -891,7 +891,7 @@
       "title": "Textarea",
       "description": "Textarea component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -911,8 +911,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "toggle",
-        "utils"
+        "zbanx-ai/zbanx-ui/toggle",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -932,7 +932,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -951,7 +951,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -971,8 +971,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -988,7 +988,7 @@
       "title": "Kbd",
       "description": "Kbd component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1007,7 +1007,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1044,8 +1044,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1064,7 +1064,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1080,7 +1080,7 @@
       "title": "Resizable Sidebar",
       "description": "Resizable Sidebar component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1130,10 +1130,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "popover",
-        "scroll-area",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1152,10 +1152,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "checkbox",
-        "collapsible",
-        "input",
-        "utils"
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1174,10 +1174,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1196,10 +1196,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "input",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1219,8 +1219,8 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1236,8 +1236,8 @@
       "title": "Popover Confirm",
       "description": "Popover Confirm component.",
       "registryDependencies": [
-        "button",
-        "popover"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/popover"
       ],
       "files": [
         {
@@ -1256,8 +1256,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils",
-        "oss-image"
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/oss-image"
       ],
       "files": [
         {
@@ -1273,9 +1273,9 @@
       "title": "Overflow Tags Badge",
       "description": "Overflow Tags Badge component.",
       "registryDependencies": [
-        "popover",
-        "scroll-area",
-        "utils"
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1291,9 +1291,9 @@
       "title": "Tag List",
       "description": "Tag List component.",
       "registryDependencies": [
-        "badge",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1309,8 +1309,8 @@
       "title": "Clamped Text",
       "description": "Clamped Text component.",
       "registryDependencies": [
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1363,9 +1363,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "overflow-tags-badge",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1384,19 +1384,19 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "creator-filter-core",
-        "data-select",
-        "grouped-check-panel",
-        "number-preset-select",
-        "number-range-select",
-        "tag-input",
-        "button",
-        "input",
-        "select",
-        "sheet",
-        "checkbox",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/data-select",
+        "zbanx-ai/zbanx-ui/grouped-check-panel",
+        "zbanx-ai/zbanx-ui/number-preset-select",
+        "zbanx-ai/zbanx-ui/number-range-select",
+        "zbanx-ai/zbanx-ui/tag-input",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1465,14 +1465,14 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "creator-filter-core",
-        "creator-filter-ui",
-        "icon-button",
-        "overflow-tags-badge",
-        "popover",
-        "separator",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1497,20 +1497,20 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "avatar",
-        "badge",
-        "button",
-        "checkbox",
-        "clamped-text",
-        "country-flag",
-        "link",
-        "number",
-        "oss-image",
-        "skeleton",
-        "tag-list",
-        "tooltip",
-        "utils",
-        "video-cover"
+        "zbanx-ai/zbanx-ui/avatar",
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/video-cover"
       ],
       "files": [
         {
@@ -1550,15 +1550,15 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "creator-list-item",
-        "tag-list",
-        "video-cover",
-        "country-flag",
-        "button",
-        "sheet",
-        "tooltip",
-        "link",
-        "utils"
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/video-cover",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1578,18 +1578,18 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "button",
-        "card",
-        "checkbox",
-        "creator-filter-bar",
-        "creator-filter-core",
-        "creator-filter-ui",
-        "creator-list-item",
-        "creator-profile-drawer",
-        "empty",
-        "icon-button",
-        "number",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/creator-filter-bar",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/creator-profile-drawer",
+        "zbanx-ai/zbanx-ui/empty",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1608,8 +1608,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1629,10 +1629,10 @@
         "react-virtuoso"
       ],
       "registryDependencies": [
-        "button",
-        "checkbox",
-        "skeleton",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1668,11 +1668,11 @@
       "title": "Responsive Filter Layout",
       "description": "Responsive filter grid collapsing overflow into a drawer.",
       "registryDependencies": [
-        "button",
-        "sheet",
-        "spinner",
-        "switch",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/switch",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1691,8 +1691,8 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "select",
-        "utils"
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1712,9 +1712,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "accordion",
-        "badge",
-        "utils"
+        "zbanx-ai/zbanx-ui/accordion",
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1733,9 +1733,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1755,9 +1755,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "hover-card",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/hover-card",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1777,9 +1777,9 @@
         "media-chrome"
       ],
       "registryDependencies": [
-        "button",
-        "button-group",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/button-group",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1816,9 +1816,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1837,10 +1837,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "separator",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1860,9 +1860,9 @@
         "shiki"
       ],
       "registryDependencies": [
-        "button",
-        "select",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1881,10 +1881,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "avatar",
-        "button",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/avatar",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1903,9 +1903,9 @@
         "ai"
       ],
       "registryDependencies": [
-        "alert",
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/alert",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1942,10 +1942,10 @@
         "tokenlens"
       ],
       "registryDependencies": [
-        "button",
-        "hover-card",
-        "progress",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/hover-card",
+        "zbanx-ai/zbanx-ui/progress",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1964,7 +1964,7 @@
         "@xyflow/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1985,8 +1985,8 @@
         "use-stick-to-bottom"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2022,10 +2022,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "button",
-        "switch",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/switch",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2044,8 +2044,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2064,7 +2064,7 @@
         "ai"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2083,10 +2083,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "carousel",
-        "hover-card",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/carousel",
+        "zbanx-ai/zbanx-ui/hover-card",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2106,7 +2106,7 @@
         "react-jsx-parser"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2131,10 +2131,10 @@
         "streamdown"
       ],
       "registryDependencies": [
-        "button",
-        "button-group",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/button-group",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2154,10 +2154,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "command",
-        "popover",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2173,9 +2173,9 @@
       "title": "Shadcn Ai Model Selector",
       "description": "Shadcn Ai Model Selector component.",
       "registryDependencies": [
-        "command",
-        "dialog",
-        "utils"
+        "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/dialog",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2194,8 +2194,8 @@
         "@xyflow/react"
       ],
       "registryDependencies": [
-        "card",
-        "utils"
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2214,9 +2214,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "dropdown-menu",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/dropdown-menu",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2235,8 +2235,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2255,7 +2255,7 @@
         "@xyflow/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2274,7 +2274,7 @@
         "@rive-app/react-webgl2"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2293,10 +2293,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "card",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2317,14 +2317,14 @@
         "nanoid"
       ],
       "registryDependencies": [
-        "command",
-        "dropdown-menu",
-        "hover-card",
-        "input-group",
-        "select",
-        "spinner",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/dropdown-menu",
+        "zbanx-ai/zbanx-ui/hover-card",
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2343,10 +2343,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "collapsible",
-        "scroll-area",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2371,8 +2371,8 @@
         "streamdown"
       ],
       "registryDependencies": [
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2392,9 +2392,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "collapsible",
-        "tabs",
-        "utils"
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/tabs",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2413,9 +2413,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2434,7 +2434,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2453,8 +2453,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "input-group",
-        "utils"
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2473,8 +2473,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2493,9 +2493,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "spinner",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2515,9 +2515,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2533,9 +2533,9 @@
       "title": "Shadcn Ai Suggestion",
       "description": "Shadcn Ai Suggestion component.",
       "registryDependencies": [
-        "button",
-        "scroll-area",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2554,8 +2554,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2575,8 +2575,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2595,9 +2595,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2617,9 +2617,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "badge",
-        "collapsible",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2638,7 +2638,7 @@
         "@xyflow/react"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2658,7 +2658,7 @@
         "ai"
       ],
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2678,11 +2678,11 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "command",
-        "dialog",
-        "spinner",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/dialog",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2701,11 +2701,11 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "collapsible",
-        "input",
-        "tooltip",
-        "utils"
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2721,7 +2721,7 @@
       "title": "Ai Agent Loading State",
       "description": "Ai Agent Loading State component.",
       "registryDependencies": [
-        "utils"
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2741,10 +2741,10 @@
         "motion"
       ],
       "registryDependencies": [
-        "badge",
-        "button",
-        "input-group",
-        "utils"
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -2845,7 +2845,7 @@
       "title": "Format",
       "description": "Formatting utility functions.",
       "registryDependencies": [
-        "number"
+        "zbanx-ai/zbanx-ui/number"
       ],
       "files": [
         {
@@ -2908,145 +2908,145 @@
       "title": "All components",
       "description": "Installs every item in the zbanx-ui registry (ui, custom, ai, hooks and lib).",
       "registryDependencies": [
-        "accordion",
-        "ai-agent-loading-state",
-        "ai-agent-prompt-bar",
-        "alert",
-        "alert-dialog",
-        "aspect-ratio",
-        "attachment",
-        "avatar",
-        "badge",
-        "breadcrumb",
-        "button",
-        "button-group",
-        "calendar",
-        "card",
-        "carousel",
-        "chart",
-        "checkbox",
-        "clamped-text",
-        "collapsible",
-        "color",
-        "command",
-        "country-flag",
-        "creator-filter-bar",
-        "creator-filter-core",
-        "creator-filter-ui",
-        "creator-list-item",
-        "creator-profile-drawer",
-        "creator-search-list",
-        "data-select",
-        "dialog",
-        "dropdown-menu",
-        "empty",
-        "entity-chip",
-        "field",
-        "format",
-        "grouped-check-panel",
-        "hover-card",
-        "icon-button",
-        "input",
-        "input-group",
-        "input-otp",
-        "item",
-        "kbd",
-        "label",
-        "link",
-        "marker",
-        "message",
-        "message-scroller",
-        "native-select",
-        "number",
-        "number-preset-select",
-        "number-range-select",
-        "oss-image",
-        "overflow-tags-badge",
-        "pagination",
-        "pagination-classic",
-        "platform-icon",
-        "popover",
-        "popover-confirm",
-        "preview-card",
-        "progress",
-        "query-list",
-        "questionnaire",
-        "radio-group",
-        "resizable",
-        "resizable-sidebar",
-        "responsive-filter-layout",
-        "scroll-area",
-        "select",
-        "separator",
-        "shadcn-ai-agent",
-        "shadcn-ai-artifact",
-        "shadcn-ai-attachments",
-        "shadcn-ai-audio-player",
-        "shadcn-ai-canvas",
-        "shadcn-ai-chain-of-thought",
-        "shadcn-ai-checkpoint",
-        "shadcn-ai-code-block",
-        "shadcn-ai-commit",
-        "shadcn-ai-confirmation",
-        "shadcn-ai-connection",
-        "shadcn-ai-context",
-        "shadcn-ai-controls",
-        "shadcn-ai-conversation",
-        "shadcn-ai-edge",
-        "shadcn-ai-environment-variables",
-        "shadcn-ai-file-tree",
-        "shadcn-ai-image",
-        "shadcn-ai-inline-citation",
-        "shadcn-ai-jsx-preview",
-        "shadcn-ai-message",
-        "shadcn-ai-mic-selector",
-        "shadcn-ai-model-selector",
-        "shadcn-ai-node",
-        "shadcn-ai-open-in-chat",
-        "shadcn-ai-package-info",
-        "shadcn-ai-panel",
-        "shadcn-ai-persona",
-        "shadcn-ai-plan",
-        "shadcn-ai-prompt-input",
-        "shadcn-ai-queue",
-        "shadcn-ai-reasoning",
-        "shadcn-ai-sandbox",
-        "shadcn-ai-schema-display",
-        "shadcn-ai-shimmer",
-        "shadcn-ai-snippet",
-        "shadcn-ai-sources",
-        "shadcn-ai-speech-input",
-        "shadcn-ai-stack-trace",
-        "shadcn-ai-suggestion",
-        "shadcn-ai-task",
-        "shadcn-ai-terminal",
-        "shadcn-ai-test-results",
-        "shadcn-ai-tool",
-        "shadcn-ai-toolbar",
-        "shadcn-ai-transcription",
-        "shadcn-ai-voice-selector",
-        "shadcn-ai-web-preview",
-        "sheet",
-        "sidebar",
-        "skeleton",
-        "slider",
-        "sonner",
-        "spinner",
-        "switch",
-        "table",
-        "tabs",
-        "tag-input",
-        "tag-list",
-        "textarea",
-        "toggle",
-        "toggle-group",
-        "tooltip",
-        "use-countdown",
-        "use-mobile",
-        "utils",
-        "value-pill",
-        "video-cover",
-        "visually-hidden-input"
+        "zbanx-ai/zbanx-ui/accordion",
+        "zbanx-ai/zbanx-ui/ai-agent-loading-state",
+        "zbanx-ai/zbanx-ui/ai-agent-prompt-bar",
+        "zbanx-ai/zbanx-ui/alert",
+        "zbanx-ai/zbanx-ui/alert-dialog",
+        "zbanx-ai/zbanx-ui/aspect-ratio",
+        "zbanx-ai/zbanx-ui/attachment",
+        "zbanx-ai/zbanx-ui/avatar",
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/breadcrumb",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/button-group",
+        "zbanx-ai/zbanx-ui/calendar",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/carousel",
+        "zbanx-ai/zbanx-ui/chart",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/color",
+        "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/creator-filter-bar",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/creator-profile-drawer",
+        "zbanx-ai/zbanx-ui/creator-search-list",
+        "zbanx-ai/zbanx-ui/data-select",
+        "zbanx-ai/zbanx-ui/dialog",
+        "zbanx-ai/zbanx-ui/dropdown-menu",
+        "zbanx-ai/zbanx-ui/empty",
+        "zbanx-ai/zbanx-ui/entity-chip",
+        "zbanx-ai/zbanx-ui/field",
+        "zbanx-ai/zbanx-ui/format",
+        "zbanx-ai/zbanx-ui/grouped-check-panel",
+        "zbanx-ai/zbanx-ui/hover-card",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/input-otp",
+        "zbanx-ai/zbanx-ui/item",
+        "zbanx-ai/zbanx-ui/kbd",
+        "zbanx-ai/zbanx-ui/label",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/marker",
+        "zbanx-ai/zbanx-ui/message",
+        "zbanx-ai/zbanx-ui/message-scroller",
+        "zbanx-ai/zbanx-ui/native-select",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/number-preset-select",
+        "zbanx-ai/zbanx-ui/number-range-select",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/pagination",
+        "zbanx-ai/zbanx-ui/pagination-classic",
+        "zbanx-ai/zbanx-ui/platform-icon",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/popover-confirm",
+        "zbanx-ai/zbanx-ui/preview-card",
+        "zbanx-ai/zbanx-ui/progress",
+        "zbanx-ai/zbanx-ui/query-list",
+        "zbanx-ai/zbanx-ui/questionnaire",
+        "zbanx-ai/zbanx-ui/radio-group",
+        "zbanx-ai/zbanx-ui/resizable",
+        "zbanx-ai/zbanx-ui/resizable-sidebar",
+        "zbanx-ai/zbanx-ui/responsive-filter-layout",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/shadcn-ai-agent",
+        "zbanx-ai/zbanx-ui/shadcn-ai-artifact",
+        "zbanx-ai/zbanx-ui/shadcn-ai-attachments",
+        "zbanx-ai/zbanx-ui/shadcn-ai-audio-player",
+        "zbanx-ai/zbanx-ui/shadcn-ai-canvas",
+        "zbanx-ai/zbanx-ui/shadcn-ai-chain-of-thought",
+        "zbanx-ai/zbanx-ui/shadcn-ai-checkpoint",
+        "zbanx-ai/zbanx-ui/shadcn-ai-code-block",
+        "zbanx-ai/zbanx-ui/shadcn-ai-commit",
+        "zbanx-ai/zbanx-ui/shadcn-ai-confirmation",
+        "zbanx-ai/zbanx-ui/shadcn-ai-connection",
+        "zbanx-ai/zbanx-ui/shadcn-ai-context",
+        "zbanx-ai/zbanx-ui/shadcn-ai-controls",
+        "zbanx-ai/zbanx-ui/shadcn-ai-conversation",
+        "zbanx-ai/zbanx-ui/shadcn-ai-edge",
+        "zbanx-ai/zbanx-ui/shadcn-ai-environment-variables",
+        "zbanx-ai/zbanx-ui/shadcn-ai-file-tree",
+        "zbanx-ai/zbanx-ui/shadcn-ai-image",
+        "zbanx-ai/zbanx-ui/shadcn-ai-inline-citation",
+        "zbanx-ai/zbanx-ui/shadcn-ai-jsx-preview",
+        "zbanx-ai/zbanx-ui/shadcn-ai-message",
+        "zbanx-ai/zbanx-ui/shadcn-ai-mic-selector",
+        "zbanx-ai/zbanx-ui/shadcn-ai-model-selector",
+        "zbanx-ai/zbanx-ui/shadcn-ai-node",
+        "zbanx-ai/zbanx-ui/shadcn-ai-open-in-chat",
+        "zbanx-ai/zbanx-ui/shadcn-ai-package-info",
+        "zbanx-ai/zbanx-ui/shadcn-ai-panel",
+        "zbanx-ai/zbanx-ui/shadcn-ai-persona",
+        "zbanx-ai/zbanx-ui/shadcn-ai-plan",
+        "zbanx-ai/zbanx-ui/shadcn-ai-prompt-input",
+        "zbanx-ai/zbanx-ui/shadcn-ai-queue",
+        "zbanx-ai/zbanx-ui/shadcn-ai-reasoning",
+        "zbanx-ai/zbanx-ui/shadcn-ai-sandbox",
+        "zbanx-ai/zbanx-ui/shadcn-ai-schema-display",
+        "zbanx-ai/zbanx-ui/shadcn-ai-shimmer",
+        "zbanx-ai/zbanx-ui/shadcn-ai-snippet",
+        "zbanx-ai/zbanx-ui/shadcn-ai-sources",
+        "zbanx-ai/zbanx-ui/shadcn-ai-speech-input",
+        "zbanx-ai/zbanx-ui/shadcn-ai-stack-trace",
+        "zbanx-ai/zbanx-ui/shadcn-ai-suggestion",
+        "zbanx-ai/zbanx-ui/shadcn-ai-task",
+        "zbanx-ai/zbanx-ui/shadcn-ai-terminal",
+        "zbanx-ai/zbanx-ui/shadcn-ai-test-results",
+        "zbanx-ai/zbanx-ui/shadcn-ai-tool",
+        "zbanx-ai/zbanx-ui/shadcn-ai-toolbar",
+        "zbanx-ai/zbanx-ui/shadcn-ai-transcription",
+        "zbanx-ai/zbanx-ui/shadcn-ai-voice-selector",
+        "zbanx-ai/zbanx-ui/shadcn-ai-web-preview",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/sidebar",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/slider",
+        "zbanx-ai/zbanx-ui/sonner",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/switch",
+        "zbanx-ai/zbanx-ui/table",
+        "zbanx-ai/zbanx-ui/tabs",
+        "zbanx-ai/zbanx-ui/tag-input",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/textarea",
+        "zbanx-ai/zbanx-ui/toggle",
+        "zbanx-ai/zbanx-ui/toggle-group",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/use-countdown",
+        "zbanx-ai/zbanx-ui/use-mobile",
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/value-pill",
+        "zbanx-ai/zbanx-ui/video-cover",
+        "zbanx-ai/zbanx-ui/visually-hidden-input"
       ],
       "type": "registry:item"
     },
@@ -3055,8 +3055,8 @@
       "title": "ai-agents bundle",
       "description": "Installs every item in the ai-agents category (2 items).",
       "registryDependencies": [
-        "ai-agent-loading-state",
-        "ai-agent-prompt-bar"
+        "zbanx-ai/zbanx-ui/ai-agent-loading-state",
+        "zbanx-ai/zbanx-ui/ai-agent-prompt-bar"
       ],
       "type": "registry:item"
     },
@@ -3065,54 +3065,54 @@
       "title": "ai-elements bundle",
       "description": "Installs every item in the ai-elements category (48 items).",
       "registryDependencies": [
-        "shadcn-ai-agent",
-        "shadcn-ai-artifact",
-        "shadcn-ai-attachments",
-        "shadcn-ai-audio-player",
-        "shadcn-ai-canvas",
-        "shadcn-ai-chain-of-thought",
-        "shadcn-ai-checkpoint",
-        "shadcn-ai-code-block",
-        "shadcn-ai-commit",
-        "shadcn-ai-confirmation",
-        "shadcn-ai-connection",
-        "shadcn-ai-context",
-        "shadcn-ai-controls",
-        "shadcn-ai-conversation",
-        "shadcn-ai-edge",
-        "shadcn-ai-environment-variables",
-        "shadcn-ai-file-tree",
-        "shadcn-ai-image",
-        "shadcn-ai-inline-citation",
-        "shadcn-ai-jsx-preview",
-        "shadcn-ai-message",
-        "shadcn-ai-mic-selector",
-        "shadcn-ai-model-selector",
-        "shadcn-ai-node",
-        "shadcn-ai-open-in-chat",
-        "shadcn-ai-package-info",
-        "shadcn-ai-panel",
-        "shadcn-ai-persona",
-        "shadcn-ai-plan",
-        "shadcn-ai-prompt-input",
-        "shadcn-ai-queue",
-        "shadcn-ai-reasoning",
-        "shadcn-ai-sandbox",
-        "shadcn-ai-schema-display",
-        "shadcn-ai-shimmer",
-        "shadcn-ai-snippet",
-        "shadcn-ai-sources",
-        "shadcn-ai-speech-input",
-        "shadcn-ai-stack-trace",
-        "shadcn-ai-suggestion",
-        "shadcn-ai-task",
-        "shadcn-ai-terminal",
-        "shadcn-ai-test-results",
-        "shadcn-ai-tool",
-        "shadcn-ai-toolbar",
-        "shadcn-ai-transcription",
-        "shadcn-ai-voice-selector",
-        "shadcn-ai-web-preview"
+        "zbanx-ai/zbanx-ui/shadcn-ai-agent",
+        "zbanx-ai/zbanx-ui/shadcn-ai-artifact",
+        "zbanx-ai/zbanx-ui/shadcn-ai-attachments",
+        "zbanx-ai/zbanx-ui/shadcn-ai-audio-player",
+        "zbanx-ai/zbanx-ui/shadcn-ai-canvas",
+        "zbanx-ai/zbanx-ui/shadcn-ai-chain-of-thought",
+        "zbanx-ai/zbanx-ui/shadcn-ai-checkpoint",
+        "zbanx-ai/zbanx-ui/shadcn-ai-code-block",
+        "zbanx-ai/zbanx-ui/shadcn-ai-commit",
+        "zbanx-ai/zbanx-ui/shadcn-ai-confirmation",
+        "zbanx-ai/zbanx-ui/shadcn-ai-connection",
+        "zbanx-ai/zbanx-ui/shadcn-ai-context",
+        "zbanx-ai/zbanx-ui/shadcn-ai-controls",
+        "zbanx-ai/zbanx-ui/shadcn-ai-conversation",
+        "zbanx-ai/zbanx-ui/shadcn-ai-edge",
+        "zbanx-ai/zbanx-ui/shadcn-ai-environment-variables",
+        "zbanx-ai/zbanx-ui/shadcn-ai-file-tree",
+        "zbanx-ai/zbanx-ui/shadcn-ai-image",
+        "zbanx-ai/zbanx-ui/shadcn-ai-inline-citation",
+        "zbanx-ai/zbanx-ui/shadcn-ai-jsx-preview",
+        "zbanx-ai/zbanx-ui/shadcn-ai-message",
+        "zbanx-ai/zbanx-ui/shadcn-ai-mic-selector",
+        "zbanx-ai/zbanx-ui/shadcn-ai-model-selector",
+        "zbanx-ai/zbanx-ui/shadcn-ai-node",
+        "zbanx-ai/zbanx-ui/shadcn-ai-open-in-chat",
+        "zbanx-ai/zbanx-ui/shadcn-ai-package-info",
+        "zbanx-ai/zbanx-ui/shadcn-ai-panel",
+        "zbanx-ai/zbanx-ui/shadcn-ai-persona",
+        "zbanx-ai/zbanx-ui/shadcn-ai-plan",
+        "zbanx-ai/zbanx-ui/shadcn-ai-prompt-input",
+        "zbanx-ai/zbanx-ui/shadcn-ai-queue",
+        "zbanx-ai/zbanx-ui/shadcn-ai-reasoning",
+        "zbanx-ai/zbanx-ui/shadcn-ai-sandbox",
+        "zbanx-ai/zbanx-ui/shadcn-ai-schema-display",
+        "zbanx-ai/zbanx-ui/shadcn-ai-shimmer",
+        "zbanx-ai/zbanx-ui/shadcn-ai-snippet",
+        "zbanx-ai/zbanx-ui/shadcn-ai-sources",
+        "zbanx-ai/zbanx-ui/shadcn-ai-speech-input",
+        "zbanx-ai/zbanx-ui/shadcn-ai-stack-trace",
+        "zbanx-ai/zbanx-ui/shadcn-ai-suggestion",
+        "zbanx-ai/zbanx-ui/shadcn-ai-task",
+        "zbanx-ai/zbanx-ui/shadcn-ai-terminal",
+        "zbanx-ai/zbanx-ui/shadcn-ai-test-results",
+        "zbanx-ai/zbanx-ui/shadcn-ai-tool",
+        "zbanx-ai/zbanx-ui/shadcn-ai-toolbar",
+        "zbanx-ai/zbanx-ui/shadcn-ai-transcription",
+        "zbanx-ai/zbanx-ui/shadcn-ai-voice-selector",
+        "zbanx-ai/zbanx-ui/shadcn-ai-web-preview"
       ],
       "type": "registry:item"
     },
@@ -3121,8 +3121,8 @@
       "title": "atom bundle",
       "description": "Installs every item in the atom category (2 items).",
       "registryDependencies": [
-        "entity-chip",
-        "value-pill"
+        "zbanx-ai/zbanx-ui/entity-chip",
+        "zbanx-ai/zbanx-ui/value-pill"
       ],
       "type": "registry:item"
     },
@@ -3131,28 +3131,28 @@
       "title": "custom bundle",
       "description": "Installs every item in the custom category (22 items).",
       "registryDependencies": [
-        "clamped-text",
-        "country-flag",
-        "creator-filter-bar",
-        "creator-filter-core",
-        "creator-filter-ui",
-        "creator-list-item",
-        "creator-profile-drawer",
-        "creator-search-list",
-        "data-select",
-        "grouped-check-panel",
-        "icon-button",
-        "number-preset-select",
-        "number-range-select",
-        "overflow-tags-badge",
-        "pagination-classic",
-        "platform-icon",
-        "popover-confirm",
-        "query-list",
-        "responsive-filter-layout",
-        "tag-input",
-        "tag-list",
-        "video-cover"
+        "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/creator-filter-bar",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/creator-profile-drawer",
+        "zbanx-ai/zbanx-ui/creator-search-list",
+        "zbanx-ai/zbanx-ui/data-select",
+        "zbanx-ai/zbanx-ui/grouped-check-panel",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/number-preset-select",
+        "zbanx-ai/zbanx-ui/number-range-select",
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/pagination-classic",
+        "zbanx-ai/zbanx-ui/platform-icon",
+        "zbanx-ai/zbanx-ui/popover-confirm",
+        "zbanx-ai/zbanx-ui/query-list",
+        "zbanx-ai/zbanx-ui/responsive-filter-layout",
+        "zbanx-ai/zbanx-ui/tag-input",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/video-cover"
       ],
       "type": "registry:item"
     },
@@ -3161,8 +3161,8 @@
       "title": "hooks bundle",
       "description": "Installs every item in the hooks category (2 items).",
       "registryDependencies": [
-        "use-countdown",
-        "use-mobile"
+        "zbanx-ai/zbanx-ui/use-countdown",
+        "zbanx-ai/zbanx-ui/use-mobile"
       ],
       "type": "registry:item"
     },
@@ -3171,12 +3171,12 @@
       "title": "utils bundle",
       "description": "Installs every item in the utils category (6 items).",
       "registryDependencies": [
-        "color",
-        "format",
-        "link",
-        "number",
-        "oss-image",
-        "utils"
+        "zbanx-ai/zbanx-ui/color",
+        "zbanx-ai/zbanx-ui/format",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "type": "registry:item"
     },
@@ -3185,63 +3185,63 @@
       "title": "ui bundle",
       "description": "Installs every item in the ui category (57 items).",
       "registryDependencies": [
-        "accordion",
-        "alert",
-        "alert-dialog",
-        "aspect-ratio",
-        "attachment",
-        "avatar",
-        "badge",
-        "breadcrumb",
-        "button",
-        "button-group",
-        "calendar",
-        "card",
-        "carousel",
-        "chart",
-        "checkbox",
-        "collapsible",
-        "command",
-        "dialog",
-        "dropdown-menu",
-        "empty",
-        "field",
-        "hover-card",
-        "input",
-        "input-group",
-        "input-otp",
-        "item",
-        "kbd",
-        "label",
-        "marker",
-        "message",
-        "message-scroller",
-        "native-select",
-        "pagination",
-        "popover",
-        "preview-card",
-        "progress",
-        "questionnaire",
-        "radio-group",
-        "resizable",
-        "resizable-sidebar",
-        "scroll-area",
-        "select",
-        "separator",
-        "sheet",
-        "sidebar",
-        "skeleton",
-        "slider",
-        "sonner",
-        "spinner",
-        "switch",
-        "table",
-        "tabs",
-        "textarea",
-        "toggle",
-        "toggle-group",
-        "tooltip",
-        "visually-hidden-input"
+        "zbanx-ai/zbanx-ui/accordion",
+        "zbanx-ai/zbanx-ui/alert",
+        "zbanx-ai/zbanx-ui/alert-dialog",
+        "zbanx-ai/zbanx-ui/aspect-ratio",
+        "zbanx-ai/zbanx-ui/attachment",
+        "zbanx-ai/zbanx-ui/avatar",
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/breadcrumb",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/button-group",
+        "zbanx-ai/zbanx-ui/calendar",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/carousel",
+        "zbanx-ai/zbanx-ui/chart",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/collapsible",
+        "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/dialog",
+        "zbanx-ai/zbanx-ui/dropdown-menu",
+        "zbanx-ai/zbanx-ui/empty",
+        "zbanx-ai/zbanx-ui/field",
+        "zbanx-ai/zbanx-ui/hover-card",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/input-group",
+        "zbanx-ai/zbanx-ui/input-otp",
+        "zbanx-ai/zbanx-ui/item",
+        "zbanx-ai/zbanx-ui/kbd",
+        "zbanx-ai/zbanx-ui/label",
+        "zbanx-ai/zbanx-ui/marker",
+        "zbanx-ai/zbanx-ui/message",
+        "zbanx-ai/zbanx-ui/message-scroller",
+        "zbanx-ai/zbanx-ui/native-select",
+        "zbanx-ai/zbanx-ui/pagination",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/preview-card",
+        "zbanx-ai/zbanx-ui/progress",
+        "zbanx-ai/zbanx-ui/questionnaire",
+        "zbanx-ai/zbanx-ui/radio-group",
+        "zbanx-ai/zbanx-ui/resizable",
+        "zbanx-ai/zbanx-ui/resizable-sidebar",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/sidebar",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/slider",
+        "zbanx-ai/zbanx-ui/sonner",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/switch",
+        "zbanx-ai/zbanx-ui/table",
+        "zbanx-ai/zbanx-ui/tabs",
+        "zbanx-ai/zbanx-ui/textarea",
+        "zbanx-ai/zbanx-ui/toggle",
+        "zbanx-ai/zbanx-ui/toggle-group",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/visually-hidden-input"
       ],
       "type": "registry:item"
     }

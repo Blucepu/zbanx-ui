@@ -47,7 +47,7 @@
         }
       ],
       "registryDependencies": [
-        "number"
+        "zbanx-ai/zbanx-ui/number"
       ]
     },
     {

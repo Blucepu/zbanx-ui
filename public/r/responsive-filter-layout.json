@@ -4,11 +4,11 @@
   "title": "Responsive Filter Layout",
   "description": "Responsive filter grid collapsing overflow into a drawer.",
   "registryDependencies": [
-    "button",
-    "sheet",
-    "spinner",
-    "switch",
-    "utils"
+    "zbanx-ai/zbanx-ui/button",
+    "zbanx-ai/zbanx-ui/sheet",
+    "zbanx-ai/zbanx-ui/spinner",
+    "zbanx-ai/zbanx-ui/switch",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

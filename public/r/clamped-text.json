@@ -4,8 +4,8 @@
   "title": "Clamped Text",
   "description": "Clamped Text component.",
   "registryDependencies": [
-    "popover",
-    "utils"
+    "zbanx-ai/zbanx-ui/popover",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "files": [
     {

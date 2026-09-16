@@ -4,8 +4,8 @@
   "title": "atom bundle",
   "description": "Installs every item in the atom category (2 items).",
   "registryDependencies": [
-    "entity-chip",
-    "value-pill"
+    "zbanx-ai/zbanx-ui/entity-chip",
+    "zbanx-ai/zbanx-ui/value-pill"
   ],
   "type": "registry:item"
 }

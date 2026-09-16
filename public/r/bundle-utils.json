@@ -4,12 +4,12 @@
   "title": "utils bundle",
   "description": "Installs every item in the utils category (6 items).",
   "registryDependencies": [
-    "color",
-    "format",
-    "link",
-    "number",
-    "oss-image",
-    "utils"
+    "zbanx-ai/zbanx-ui/color",
+    "zbanx-ai/zbanx-ui/format",
+    "zbanx-ai/zbanx-ui/link",
+    "zbanx-ai/zbanx-ui/number",
+    "zbanx-ai/zbanx-ui/oss-image",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "type": "registry:item"
 }

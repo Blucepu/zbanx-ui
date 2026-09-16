@@ -4,8 +4,8 @@
   "title": "ai-agents bundle",
   "description": "Installs every item in the ai-agents category (2 items).",
   "registryDependencies": [
-    "ai-agent-loading-state",
-    "ai-agent-prompt-bar"
+    "zbanx-ai/zbanx-ui/ai-agent-loading-state",
+    "zbanx-ai/zbanx-ui/ai-agent-prompt-bar"
   ],
   "type": "registry:item"
 }
