@@ -4,9 +4,9 @@
   "title": "Overflow Tags Badge",
   "description": "Overflow Tags Badge component.",
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/popover",
-    "zbanx-ai/zbanx-ui/scroll-area",
-    "zbanx-ai/zbanx-ui/utils"
+    "popover",
+    "scroll-area",
+    "utils"
   ],
   "files": [
     {

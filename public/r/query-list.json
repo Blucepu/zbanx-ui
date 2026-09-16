@@ -8,10 +8,10 @@
     "react-virtuoso"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/checkbox",
-    "zbanx-ai/zbanx-ui/skeleton",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "checkbox",
+    "skeleton",
+    "utils"
   ],
   "files": [
     {

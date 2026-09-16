@@ -8,8 +8,8 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/toggle",
-    "zbanx-ai/zbanx-ui/utils"
+    "toggle",
+    "utils"
   ],
   "files": [
     {

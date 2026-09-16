@@ -47,7 +47,7 @@
         }
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/number"
+        "number"
       ]
     },
     {
@@ -61,7 +61,8 @@
           "type": "registry:lib",
           "target": "@lib/link/index.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "number",
@@ -79,7 +80,8 @@
           "type": "registry:lib",
           "target": "@lib/number/formation.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     },
     {
       "name": "oss-image",
@@ -92,7 +94,8 @@
           "type": "registry:lib",
           "target": "@lib/oss-image/index.ts"
         }
-      ]
+      ],
+      "registryDependencies": []
     }
   ]
 }

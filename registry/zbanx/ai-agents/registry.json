@@ -14,7 +14,7 @@
         }
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/utils"
+        "utils"
       ]
     },
     {
@@ -34,10 +34,10 @@
         "motion"
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/badge",
-        "zbanx-ai/zbanx-ui/button",
-        "zbanx-ai/zbanx-ui/input-group",
-        "zbanx-ai/zbanx-ui/utils"
+        "badge",
+        "button",
+        "input-group",
+        "utils"
       ]
     }
   ]

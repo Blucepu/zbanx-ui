@@ -8,20 +8,20 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/avatar",
-    "zbanx-ai/zbanx-ui/badge",
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/checkbox",
-    "zbanx-ai/zbanx-ui/clamped-text",
-    "zbanx-ai/zbanx-ui/country-flag",
-    "zbanx-ai/zbanx-ui/link",
-    "zbanx-ai/zbanx-ui/number",
-    "zbanx-ai/zbanx-ui/oss-image",
-    "zbanx-ai/zbanx-ui/skeleton",
-    "zbanx-ai/zbanx-ui/tag-list",
-    "zbanx-ai/zbanx-ui/tooltip",
-    "zbanx-ai/zbanx-ui/utils",
-    "zbanx-ai/zbanx-ui/video-cover"
+    "avatar",
+    "badge",
+    "button",
+    "checkbox",
+    "clamped-text",
+    "country-flag",
+    "link",
+    "number",
+    "oss-image",
+    "skeleton",
+    "tag-list",
+    "tooltip",
+    "utils",
+    "video-cover"
   ],
   "files": [
     {

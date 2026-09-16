@@ -3,6 +3,7 @@
   "name": "link",
   "title": "Link",
   "description": "URL and platform link utility functions.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/zbanx/lib/link/index.ts",

@@ -8,18 +8,18 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/card",
-    "zbanx-ai/zbanx-ui/checkbox",
-    "zbanx-ai/zbanx-ui/creator-filter-bar",
-    "zbanx-ai/zbanx-ui/creator-filter-core",
-    "zbanx-ai/zbanx-ui/creator-filter-ui",
-    "zbanx-ai/zbanx-ui/creator-list-item",
-    "zbanx-ai/zbanx-ui/creator-profile-drawer",
-    "zbanx-ai/zbanx-ui/empty",
-    "zbanx-ai/zbanx-ui/icon-button",
-    "zbanx-ai/zbanx-ui/number",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "card",
+    "checkbox",
+    "creator-filter-bar",
+    "creator-filter-core",
+    "creator-filter-ui",
+    "creator-list-item",
+    "creator-profile-drawer",
+    "empty",
+    "icon-button",
+    "number",
+    "utils"
   ],
   "files": [
     {

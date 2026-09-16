@@ -7,8 +7,8 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/tooltip",
-    "zbanx-ai/zbanx-ui/utils"
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

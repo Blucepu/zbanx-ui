@@ -8,7 +8,7 @@
     "react-jsx-parser"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/utils"
+    "utils"
   ],
   "files": [
     {

@@ -3,6 +3,7 @@
   "name": "number",
   "title": "Number",
   "description": "Number parsing, formatting, and calculation utilities.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/zbanx/lib/number/index.ts",

@@ -7,10 +7,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/separator",
-    "zbanx-ai/zbanx-ui/tooltip",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "separator",
+    "tooltip",
+    "utils"
   ],
   "files": [
     {

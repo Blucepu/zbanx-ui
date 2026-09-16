@@ -8,15 +8,15 @@
     "react-icons"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/creator-list-item",
-    "zbanx-ai/zbanx-ui/tag-list",
-    "zbanx-ai/zbanx-ui/video-cover",
-    "zbanx-ai/zbanx-ui/country-flag",
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/sheet",
-    "zbanx-ai/zbanx-ui/tooltip",
-    "zbanx-ai/zbanx-ui/link",
-    "zbanx-ai/zbanx-ui/utils"
+    "creator-list-item",
+    "tag-list",
+    "video-cover",
+    "country-flag",
+    "button",
+    "sheet",
+    "tooltip",
+    "link",
+    "utils"
   ],
   "files": [
     {

@@ -6,6 +6,7 @@
   "dependencies": [
     "@radix-ui/react-aspect-ratio"
   ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/zbanx/ui/aspect-ratio.tsx",

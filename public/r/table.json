@@ -4,7 +4,7 @@
   "title": "Table",
   "description": "Table component.",
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/utils"
+    "utils"
   ],
   "files": [
     {

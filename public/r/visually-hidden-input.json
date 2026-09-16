@@ -3,6 +3,7 @@
   "name": "visually-hidden-input",
   "title": "Visually Hidden Input",
   "description": "Visually Hidden Input component.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/zbanx/ui/visually-hidden-input.tsx",

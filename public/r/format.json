@@ -4,7 +4,7 @@
   "title": "Format",
   "description": "Formatting utility functions.",
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/number"
+    "number"
   ],
   "files": [
     {

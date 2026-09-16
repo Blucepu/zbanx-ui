@@ -7,10 +7,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/badge",
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/switch",
-    "zbanx-ai/zbanx-ui/utils"
+    "badge",
+    "button",
+    "switch",
+    "utils"
   ],
   "files": [
     {

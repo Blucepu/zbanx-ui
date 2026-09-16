@@ -7,9 +7,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/spinner",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "spinner",
+    "utils"
   ],
   "files": [
     {

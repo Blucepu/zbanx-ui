@@ -7,8 +7,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/utils",
-    "zbanx-ai/zbanx-ui/oss-image"
+    "utils",
+    "oss-image"
   ],
   "files": [
     {

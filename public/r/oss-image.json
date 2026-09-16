@@ -3,6 +3,7 @@
   "name": "oss-image",
   "title": "Oss Image",
   "description": "OSS thumbnail URL utility.",
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/zbanx/lib/oss-image/index.ts",

@@ -7,10 +7,10 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/collapsible",
-    "zbanx-ai/zbanx-ui/scroll-area",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "collapsible",
+    "scroll-area",
+    "utils"
   ],
   "files": [
     {

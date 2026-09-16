@@ -8,9 +8,9 @@
     "media-chrome"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/button-group",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "button-group",
+    "utils"
   ],
   "files": [
     {

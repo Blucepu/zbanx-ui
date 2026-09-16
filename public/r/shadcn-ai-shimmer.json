@@ -7,7 +7,7 @@
     "motion"
   ],
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/utils"
+    "utils"
   ],
   "files": [
     {

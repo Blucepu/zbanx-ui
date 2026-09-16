@@ -4,9 +4,9 @@
   "title": "Shadcn Ai Suggestion",
   "description": "Shadcn Ai Suggestion component.",
   "registryDependencies": [
-    "zbanx-ai/zbanx-ui/button",
-    "zbanx-ai/zbanx-ui/scroll-area",
-    "zbanx-ai/zbanx-ui/utils"
+    "button",
+    "scroll-area",
+    "utils"
   ],
   "files": [
     {
