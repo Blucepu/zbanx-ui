@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,21 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ],
+      "@/lib/registry": [
+        "./lib/registry.ts"
+      ],
+      "@/lib/link/*": [
+        "./registry/zbanx/lib/link/*"
+      ],
+      "@/lib/oss-image/*": [
+        "./registry/zbanx/lib/oss-image/*"
+      ],
+      "@/lib/number/*": [
+        "./registry/zbanx/lib/number/*"
+      ]
     }
   },
   "include": [
@@ -29,5 +47,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-button",
+  "title": "Icon Button",
+  "description": "Icon Button component.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "zbanx-ai/zbanx-ui/tooltip",
+    "zbanx-ai/zbanx-ui/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/zbanx/custom/icon-button/index.tsx",
+      "content": "\"use client\";\n\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { forwardRef } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipTrigger,\n} from \"@/registry/zbanx/ui/tooltip\";\n\nconst iconButtonVariants = cva(\n  \"inline-flex shrink-0 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\",\n  {\n    variants: {\n      size: {\n        sm: \"p-1.5 [&_svg]:size-3.5\",\n        md: \"p-2 [&_svg]:size-4\",\n        lg: \"p-2 [&_svg]:size-5\",\n      },\n    },\n    defaultVariants: {\n      size: \"md\",\n    },\n  }\n);\n\ninterface IconButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof iconButtonVariants> {\n  tooltip?: string;\n  tooltipSide?: \"top\" | \"bottom\" | \"left\" | \"right\";\n}\n\nconst IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(\n  (\n    { className, size, tooltip, tooltipSide = \"top\", children, ...props },\n    ref\n  ) => {\n    const button = (\n      <button\n        ref={ref}\n        type=\"button\"\n        className={cn(iconButtonVariants({ size }), className)}\n        {...props}\n      >\n        {children}\n      </button>\n    );\n\n    if (!tooltip) return button;\n\n    return (\n      <Tooltip>\n        <TooltipTrigger render={button} />\n        <TooltipContent side={tooltipSide}>{tooltip}</TooltipContent>\n      </Tooltip>\n    );\n  }\n);\n\nIconButton.displayName = \"IconButton\";\n\nexport { IconButton, iconButtonVariants };\n",
+      "type": "registry:component",
+      "target": "@components/custom/icon-button/index.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

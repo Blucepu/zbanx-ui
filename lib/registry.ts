@@ -31,7 +31,9 @@ const ROOT = process.cwd();
 function categoryOf(includePath: string): string {
   const parts = includePath.split("/");
   // registry/zbanx/<category>/registry.json
-  return parts[2] ?? "misc";
+  // 注意：工具函数分片目录名为 lib（shadcn CLI 路径识别要求），展示分类仍沿用 utils
+  const category = parts[2] ?? "misc";
+  return category === "lib" ? "utils" : category;
 }
 
 export async function getRegistry(): Promise<Registry> {

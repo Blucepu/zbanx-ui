@@ -3,9 +3,13 @@
   "name": "utils",
   "title": "Utils",
   "description": "Utils component.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
   "files": [
     {
-      "path": "registry/zbanx/utils/css/cn.ts",
+      "path": "registry/zbanx/lib/css/cn.ts",
       "content": "import { type ClassValue, clsx } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
       "type": "registry:lib",
       "target": "@lib/css/cn.ts"

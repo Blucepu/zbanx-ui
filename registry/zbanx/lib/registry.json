@@ -12,6 +12,10 @@
           "type": "registry:lib",
           "target": "@lib/css/cn.ts"
         }
+      ],
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
       ]
     },
     {
@@ -19,7 +23,9 @@
       "type": "registry:lib",
       "title": "Color",
       "description": "Color component.",
-      "dependencies": ["chroma-js"],
+      "dependencies": [
+        "chroma-js"
+      ],
       "files": [
         {
           "path": "color/index.ts",
@@ -40,7 +46,9 @@
           "target": "@lib/format/index.ts"
         }
       ],
-      "registryDependencies": ["zbanx-ai/zbanx-ui/number"]
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/number"
+      ]
     },
     {
       "name": "link",
@@ -70,6 +78,19 @@
           "path": "number/formation.ts",
           "type": "registry:lib",
           "target": "@lib/number/formation.ts"
+        }
+      ]
+    },
+    {
+      "name": "oss-image",
+      "type": "registry:lib",
+      "title": "Oss Image",
+      "description": "OSS thumbnail URL utility.",
+      "files": [
+        {
+          "path": "oss-image/index.ts",
+          "type": "registry:lib",
+          "target": "@lib/oss-image/index.ts"
         }
       ]
     }

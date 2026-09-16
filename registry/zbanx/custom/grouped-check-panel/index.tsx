@@ -20,12 +20,17 @@ export interface GroupedCheckItem {
   id: string;
   value: string;
   label: string;
+  /** 右侧计数（可选，如渠道数量），不传则不展示 */
+  count?: number;
+  /** 计数加载态，展示占位圆圈避免布局跳动 */
+  countLoading?: boolean;
 }
 
 export interface GroupedCheckGroup {
   id: string;
   name: string;
   items: GroupedCheckItem[];
+  countLoading?: boolean;
 }
 
 export type GroupedCheckValue = string | null;
@@ -273,6 +278,15 @@ export function GroupedCheckPanel({
                           }
                         />
                         <span className="truncate">{item.label}</span>
+                        {item.countLoading ? (
+                          <span className="ml-auto size-3 shrink-0 animate-pulse rounded-full bg-muted" />
+                        ) : (
+                          item.count !== undefined && (
+                            <span className="ml-auto shrink-0 text-muted-foreground text-xs">
+                              {item.count}
+                            </span>
+                          )
+                        )}
                       </label>
                     ))}
                   </CollapsibleContent>

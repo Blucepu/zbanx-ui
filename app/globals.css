@@ -128,3 +128,29 @@
     cursor: pointer;
   }
 }
+
+/* 自定义滚动条样式（与 web-pm-im query-list 虚拟滚动条一致） */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}

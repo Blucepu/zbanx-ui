@@ -157,6 +157,445 @@
         }
       ],
       "registryDependencies": [
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/oss-image"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "overflow-tags-badge",
+      "type": "registry:component",
+      "title": "Overflow Tags Badge",
+      "description": "Overflow Tags Badge component.",
+      "files": [
+        {
+          "path": "overflow-tags-badge/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/overflow-tags-badge/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "tag-list",
+      "type": "registry:component",
+      "title": "Tag List",
+      "description": "Tag List component.",
+      "files": [
+        {
+          "path": "tag-list/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/tag-list/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "clamped-text",
+      "type": "registry:component",
+      "title": "Clamped Text",
+      "description": "Clamped Text component.",
+      "files": [
+        {
+          "path": "clamped-text/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/clamped-text/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "creator-filter-core",
+      "type": "registry:component",
+      "title": "Creator Filter Core",
+      "description": "Creator filter types, groups, where mapping and label formatting (pure logic, no API).",
+      "files": [
+        {
+          "path": "creator-filter-core/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/index.tsx"
+        },
+        {
+          "path": "creator-filter-core/types.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/types.ts"
+        },
+        {
+          "path": "creator-filter-core/groups.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/groups.ts"
+        },
+        {
+          "path": "creator-filter-core/where.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/where.ts"
+        },
+        {
+          "path": "creator-filter-core/format.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/format.ts"
+        }
+      ],
+      "registryDependencies": []
+    },
+    {
+      "name": "tag-input",
+      "type": "registry:component",
+      "title": "Tag Input",
+      "description": "Tag Input component.",
+      "files": [
+        {
+          "path": "tag-input/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/tag-input/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "creator-filter-ui",
+      "type": "registry:component",
+      "title": "Creator Filter Ui",
+      "description": "Creator filter drawer, section and field components (pure UI, options injected).",
+      "files": [
+        {
+          "path": "creator-filter-ui/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/index.tsx"
+        },
+        {
+          "path": "creator-filter-ui/creator-filter-section.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/creator-filter-section.tsx"
+        },
+        {
+          "path": "creator-filter-ui/creator-filter-field.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/creator-filter-field.tsx"
+        },
+        {
+          "path": "creator-filter-ui/multi-select-content.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/multi-select-content.tsx"
+        },
+        {
+          "path": "creator-filter-ui/country-select.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/country-select.tsx"
+        },
+        {
+          "path": "creator-filter-ui/vertical-category-select.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/vertical-category-select.tsx"
+        },
+        {
+          "path": "creator-filter-ui/project-select.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/project-select.tsx"
+        },
+        {
+          "path": "creator-filter-ui/crawler-task-select.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/crawler-task-select.tsx"
+        },
+        {
+          "path": "creator-filter-ui/types.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/types.ts"
+        },
+        {
+          "path": "creator-filter-ui/use-field-popover.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/use-field-popover.tsx"
+        },
+        {
+          "path": "creator-filter-ui/use-filter-value-labels.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-ui/use-filter-value-labels.ts"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/data-select",
+        "zbanx-ai/zbanx-ui/grouped-check-panel",
+        "zbanx-ai/zbanx-ui/number-preset-select",
+        "zbanx-ai/zbanx-ui/number-range-select",
+        "zbanx-ai/zbanx-ui/tag-input",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/input",
+        "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "creator-filter-bar",
+      "type": "registry:component",
+      "title": "Creator Filter Bar",
+      "description": "Creator filter chips bar (pure UI).",
+      "files": [
+        {
+          "path": "creator-filter-bar/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-bar/index.tsx"
+        },
+        {
+          "path": "creator-filter-bar/filter-chip.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-bar/filter-chip.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/overflow-tags-badge",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/separator",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "creator-list-item",
+      "type": "registry:component",
+      "title": "Creator List Item",
+      "description": "Creator list row card with metrics, tags and videos (pure UI).",
+      "files": [
+        {
+          "path": "creator-list-item/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/index.tsx"
+        },
+        {
+          "path": "creator-list-item/types.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/types.ts"
+        },
+        {
+          "path": "creator-list-item/format.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/format.ts"
+        },
+        {
+          "path": "creator-list-item/metric-tips.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/metric-tips.ts"
+        },
+        {
+          "path": "creator-list-item/creator-avatar.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/creator-avatar.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/avatar",
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/video-cover"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-icons"
+      ]
+    },
+    {
+      "name": "creator-profile-drawer",
+      "type": "registry:component",
+      "title": "Creator Profile Drawer",
+      "description": "Creator detail drawer (pure UI).",
+      "files": [
+        {
+          "path": "creator-profile-drawer/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-profile-drawer/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/tag-list",
+        "zbanx-ai/zbanx-ui/video-cover",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/link",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-icons"
+      ]
+    },
+    {
+      "name": "creator-search-list",
+      "type": "registry:component",
+      "title": "Creator Search List",
+      "description": "Controlled creator search composition: filter bar + drawer + list + preview (pure UI, data via callbacks).",
+      "files": [
+        {
+          "path": "creator-search-list/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-search-list/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/creator-filter-bar",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-filter-ui",
+        "zbanx-ai/zbanx-ui/creator-list-item",
+        "zbanx-ai/zbanx-ui/creator-profile-drawer",
+        "zbanx-ai/zbanx-ui/empty",
+        "zbanx-ai/zbanx-ui/icon-button",
+        "zbanx-ai/zbanx-ui/number",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "react-icons"
+      ]
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:component",
+      "title": "Icon Button",
+      "description": "Icon Button component.",
+      "files": [
+        {
+          "path": "icon-button/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/icon-button/index.tsx"
+        }
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "query-list",
+      "type": "registry:component",
+      "title": "Query List",
+      "description": "Virtualized infinite query list with selection store (requires QueryClientProvider).",
+      "files": [
+        {
+          "path": "query-list/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/query-list/index.tsx"
+        },
+        {
+          "path": "query-list/types.ts",
+          "type": "registry:component",
+          "target": "@components/custom/query-list/types.ts"
+        },
+        {
+          "path": "query-list/hooks.ts",
+          "type": "registry:component",
+          "target": "@components/custom/query-list/hooks.ts"
+        },
+        {
+          "path": "query-list/context.ts",
+          "type": "registry:component",
+          "target": "@components/custom/query-list/context.ts"
+        },
+        {
+          "path": "query-list/selection-store.ts",
+          "type": "registry:component",
+          "target": "@components/custom/query-list/selection-store.ts"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/checkbox",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "dependencies": [
+        "@tanstack/react-query",
+        "react-virtuoso"
+      ]
+    },
+    {
+      "name": "responsive-filter-layout",
+      "type": "registry:component",
+      "title": "Responsive Filter Layout",
+      "description": "Responsive filter grid collapsing overflow into a drawer.",
+      "files": [
+        {
+          "path": "responsive-filter-layout/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/responsive-filter-layout/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/spinner",
+        "zbanx-ai/zbanx-ui/switch",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "pagination-classic",
+      "type": "registry:component",
+      "title": "Pagination Classic",
+      "description": "Classic numbered pagination with jump and page-size changer.",
+      "files": [
+        {
+          "path": "pagination-classic/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/pagination-classic/index.tsx"
+        }
+      ],
+      "dependencies": [
+        "react-icons"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/select",
         "zbanx-ai/zbanx-ui/utils"
       ]
     }

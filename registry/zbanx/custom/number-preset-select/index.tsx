@@ -45,6 +45,106 @@ function formatValue(
   return `${prefix}${value}${suffix}`;
 }
 
+export interface NumberPresetEditorProps {
+  value?: number;
+  options?: NumberPresetOption[];
+  onChange?: (value: number | undefined) => void;
+  /** 应用后回调（用于关闭外层弹层） */
+  onApplied?: () => void;
+  prefix?: string;
+  suffix?: string;
+  inputPlaceholder?: string;
+}
+
+/** 数值“最低阈值”选择面板（预设 + 自定义输入），可独立嵌入 Popover，也可作为 NumberPresetSelect 的内容 */
+export function NumberPresetEditor({
+  value,
+  options = [],
+  onChange,
+  onApplied,
+  prefix = "",
+  suffix = "",
+  inputPlaceholder = "请输入",
+}: NumberPresetEditorProps) {
+  const [draft, setDraft] = useState<number | undefined>(value);
+
+  useEffect(() => {
+    setDraft(value);
+  }, [value]);
+
+  const apply = (nextValue: number | undefined) => {
+    onChange?.(nextValue);
+    onApplied?.();
+  };
+
+  return (
+    <>
+      <div className="flex flex-wrap gap-2 pb-2">
+        {options.map((option) => (
+          <button
+            key={option.value}
+            type="button"
+            className={cn(
+              "cursor-pointer rounded-md border px-2 py-1.5 text-xs transition-colors",
+              draft === option.value
+                ? "border-primary bg-primary/10 text-primary hover:bg-primary/20"
+                : "border-border bg-muted hover:bg-accent hover:text-accent-foreground"
+            )}
+            onClick={() => setDraft(option.value)}
+          >
+            {option.label ?? `${prefix}${option.value}${suffix}`}
+          </button>
+        ))}
+      </div>
+      <div className="flex h-8 items-stretch overflow-hidden rounded-md border border-input">
+        {prefix && (
+          <span className="flex shrink-0 items-center border-input border-r bg-muted px-2 text-muted-foreground text-sm">
+            {prefix}
+          </span>
+        )}
+        <Input
+          type="number"
+          min={0}
+          value={draft ?? ""}
+          onChange={(event) => {
+            const raw = event.target.value;
+            setDraft(raw === "" ? undefined : Number(raw));
+          }}
+          placeholder={inputPlaceholder}
+          className="h-full min-w-0 flex-1 rounded-none border-0 text-center shadow-none focus-visible:border-ring focus-visible:ring-0"
+        />
+        {suffix && (
+          <span className="flex shrink-0 items-center border-input border-l bg-muted px-2 text-muted-foreground text-sm">
+            {suffix}
+          </span>
+        )}
+      </div>
+      <div className="flex justify-end gap-2 pt-2">
+        <Button
+          type="button"
+          variant="outline"
+          size="xs"
+          onClick={() => {
+            setDraft(value);
+            onApplied?.();
+          }}
+        >
+          取消
+        </Button>
+        <Button
+          type="button"
+          size="xs"
+          onClick={() =>
+            apply(draft == null || Number.isNaN(draft) ? undefined : draft)
+          }
+        >
+          确定
+        </Button>
+      </div>
+    </>
+  );
+}
+
 export function NumberPresetSelect({
   value,
   options = [],

@@ -106,6 +106,120 @@ function sameRange(first?: NumberRangeValue, second?: NumberRangeValue) {
   return first?.min === second?.min && first?.max === second?.max;
 }
 
+export interface NumberRangeEditorProps {
+  value?: NumberRangeValue;
+  options?: NumberRangeOption[];
+  unit?: string;
+  onChange?: (value: NumberRangeValue | undefined) => void;
+  /** 应用后回调（用于关闭外层弹层） */
+  onApplied?: () => void;
+  skipConfirm?: boolean;
+}
+
+/** 数值范围选择面板（可独立嵌入 Popover，也可作为 NumberRangeSelect 的内容） */
+export function NumberRangeEditor({
+  value,
+  options = [],
+  unit = "",
+  onChange,
+  onApplied,
+  skipConfirm = false,
+}: NumberRangeEditorProps) {
+  const [draft, setDraft] = useState<NumberRangeValue>(normalizeRange(value));
+  const unitScale = getUnitScale(unit);
+
+  useEffect(() => {
+    setDraft(normalizeRange(value));
+  }, [value]);
+
+  const apply = (nextValue?: NumberRangeValue) => {
+    const normalized = normalizeRange(nextValue);
+    onChange?.(
+      normalized.min == null && normalized.max == null ? undefined : normalized
+    );
+    onApplied?.();
+  };
+
+  const updateDraft = (key: "min" | "max", rawValue: string) => {
+    const parsed = rawValue === "" ? undefined : Number(rawValue) * unitScale;
+    setDraft((current) => ({
+      ...current,
+      [key]: parsed == null || Number.isNaN(parsed) ? undefined : parsed,
+    }));
+  };
+
+  return (
+    <>
+      {options.length > 0 && (
+        <div className="flex flex-wrap gap-2 pb-2">
+          {options.map((option) => {
+            const selected = sameRange(draft, option);
+            return (
+              <button
+                key={option.value ?? option.label}
+                type="button"
+                className={cn(
+                  "cursor-pointer rounded-md border px-2 py-1.5 text-xs transition-colors",
+                  selected
+                    ? "border-primary bg-primary/10 text-primary hover:bg-primary/20"
+                    : "border-border bg-muted hover:bg-accent hover:text-accent-foreground"
+                )}
+                onClick={() => {
+                  setDraft(option);
+                  if (skipConfirm) apply(option);
+                }}
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      <div className="flex h-8 items-stretch overflow-hidden rounded-md border border-input">
+        <Input
+          type="number"
+          min={0}
+          value={formatInputValue(draft.min, unit)}
+          onChange={(event) => updateDraft("min", event.target.value)}
+          placeholder="最小值"
+          aria-label="最小值"
+          className="h-full min-w-0 flex-1 rounded-none border-0 text-center shadow-none focus-visible:ring-0"
+        />
+        <span className="flex w-8 shrink-0 items-center justify-center border-input border-x bg-muted text-muted-foreground">
+          -
+        </span>
+        <Input
+          type="number"
+          min={0}
+          value={formatInputValue(draft.max, unit)}
+          onChange={(event) => updateDraft("max", event.target.value)}
+          placeholder="最大值"
+          aria-label="最大值"
+          className="h-full min-w-0 flex-1 rounded-none border-0 text-center shadow-none focus-visible:ring-0"
+        />
+        <span className="flex w-8 shrink-0 items-center justify-center border-input border-l bg-muted font-medium text-muted-foreground text-sm">
+          {unit || "-"}
+        </span>
+      </div>
+      {!skipConfirm && (
+        <div className="flex justify-end gap-2 pt-3">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => onApplied?.()}
+          >
+            取消
+          </Button>
+          <Button type="button" size="sm" onClick={() => apply(draft)}>
+            确定
+          </Button>
+        </div>
+      )}
+    </>
+  );
+}
+
 export function NumberRangeSelect({
   value,
   options = [],

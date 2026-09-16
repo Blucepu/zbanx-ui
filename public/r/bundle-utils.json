@@ -2,13 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "bundle-utils",
   "title": "utils bundle",
-  "description": "Installs every item in the utils category (5 items).",
+  "description": "Installs every item in the utils category (6 items).",
   "registryDependencies": [
     "zbanx-ai/zbanx-ui/color",
-    "zbanx-ai/zbanx-ui/utils",
     "zbanx-ai/zbanx-ui/format",
     "zbanx-ai/zbanx-ui/link",
-    "zbanx-ai/zbanx-ui/number"
+    "zbanx-ai/zbanx-ui/number",
+    "zbanx-ai/zbanx-ui/oss-image",
+    "zbanx-ai/zbanx-ui/utils"
   ],
   "type": "registry:item"
 }

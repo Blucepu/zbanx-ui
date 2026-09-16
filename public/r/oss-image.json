@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "oss-image",
+  "title": "Oss Image",
+  "description": "OSS thumbnail URL utility.",
+  "files": [
+    {
+      "path": "registry/zbanx/lib/oss-image/index.ts",
+      "content": "const DEFAULT_OSS_PROCESSABLE_HOSTS = [\n  \"zbanx-oa-image.oss-ap-southeast-1.aliyuncs.com\",\n  \"g.zbanx.com\",\n  \"zbanx-oa-test.oss-cn-chengdu.aliyuncs.com\",\n];\n\ninterface OssThumbOptions {\n  /** 缩放宽度（px），默认 200 */\n  width?: number;\n  /** 额外允许的图片域名（与默认白名单合并） */\n  extraHosts?: string[];\n}\n\n/**\n * 生成 OSS 图片缩略图 URL，减少列表请求的图片体积。\n * - 仅白名单域名生效，其他地址原样返回\n * - 追加 x-oss-process=image/resize,w_{width}/format,webp\n *\n * @example\n * getOssThumbUrl(\"https://g.zbanx.com/OA/brand_images/xxx.png\")\n * // https://g.zbanx.com/OA/brand_images/xxx.png?x-oss-process=image/resize,w_200/format,webp\n */\nexport function getOssThumbUrl(\n  url: string | null | undefined,\n  options?: OssThumbOptions\n): string {\n  if (!url) return \"\";\n  let parsed: URL;\n  try {\n    parsed = new URL(url);\n  } catch {\n    return url;\n  }\n  const hostSet = new Set(\n    [...DEFAULT_OSS_PROCESSABLE_HOSTS, ...(options?.extraHosts ?? [])].map(\n      (host) => host.toLowerCase()\n    )\n  );\n  if (!hostSet.has(parsed.hostname.toLowerCase())) return url;\n  const width =\n    options?.width && options.width > 0 ? Math.floor(options.width) : 200;\n  // 手工拼接查询串：x-oss-process 的值需保持 image/resize,w_200/format,webp 原样，URLSearchParams 会将其转义导致 OSS 不识别\n  parsed.searchParams.delete(\"x-oss-process\");\n  const query = parsed.searchParams.toString();\n  const process = `x-oss-process=image/resize,w_${width}/format,webp`;\n  return `${parsed.origin}${parsed.pathname}${query ? `?${query}&${process}` : `?${process}`}${parsed.hash}`;\n}\n",
+      "type": "registry:lib",
+      "target": "@lib/oss-image/index.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

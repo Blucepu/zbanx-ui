@@ -3,9 +3,9 @@
 基于 [shadcn registry](https://ui.shadcn.com/docs/registry) 机制的独立组件库，
 复用 `shadcn` CLI 分发，开箱即用。
 
-共 **124** 个 registry 项：`ui` 基础组件（49）· `custom` 自研业务组件（8）·
+共 **147** 个 registry 项：`ui` 基础组件（57）· `custom` 自研业务组件（22）·
 `ai-elements` AI 对话组件（48）· `ai-agents`（2）· `atom` 原子组件（2）·
-`hooks`（2）· `utils` 工具函数（5）· `bundles` 聚合安装项（8）。
+`hooks`（2）· `utils` 工具函数（6）· `bundles` 聚合安装项（8）。
 
 - 组件源码：`registry/zbanx/`（按分类拆分为 7 个 `registry.json` 分片）
 - 注册入口：根目录 `registry.json`（`name: zbanx-ui`，通过 `include` 组合各分片）
@@ -36,7 +36,7 @@ bunx --bun shadcn@latest add zbanx-ai/zbanx-ui/use-mobile
 CLI 的 `--all` 不支持按命名空间过滤，因此本仓库提供了聚合项：
 
 ```bash
-# 安装全部 113 个组件
+# 安装全部 139 个组件
 bunx --bun shadcn@latest add zbanx-ai/zbanx-ui/all
 
 # 按分类安装
@@ -58,7 +58,7 @@ bunx --bun shadcn@latest add zbanx-ai/zbanx-ui/bundle-utils
 - `src/utils/`：通用纯帮助函数（不依赖三方实例、不做 I/O）——`cn`、`color` 住这里；
 - `src/lib/`：三方库实例与协议封装（client 单例、fetch/请求封装等）。
 
-提供端 `registry/zbanx/utils/registry.json` 中，`cn` 使用 `@lib/css/cn.ts`，
+提供端 `registry/zbanx/lib/registry.json` 中，`cn` 使用 `@lib/css/cn.ts`，
 `color` 使用目录入口 `@lib/color/index.ts`。注意 `shadcn` 只认
 `@lib` / `@components` / `@ui` / `@hooks` 四个占位符，没有 `@utils`，
 且 workspace 模式下文件落点取的是 **`packages/ui/components.json`
@@ -138,7 +138,7 @@ bun run build      # 预览站生产构建
    - 复合/业务组件 → `registry/zbanx/custom/<name>/index.tsx`
     - Hook → `registry/zbanx/hooks/<name>.ts`，安装到消费端的
       `hooks/<name>/index.ts`
-    - 工具函数 → `registry/zbanx/utils/<name>/index.ts`，同一功能的附属文件放在该目录下
+    - 工具函数 → `registry/zbanx/lib/<name>/index.ts`，同一功能的附属文件放在该目录下（目录名须为 `lib`，shadcn CLI 只识别 `@/registry/<name>/{ui,components,lib,hooks}` 四类路径）
 2. 在同目录的 `registry.json` 分片中追加一项（参考同类条目）：
    - `name` 全局唯一；`type` 按种类填写
     （`registry:ui` / `registry:component` / `registry:hook` / `registry:lib`）
@@ -160,7 +160,7 @@ registry/zbanx/
   ai-agents/registry.json
   atom/registry.json
   hooks/registry.json          # use-mobile、use-countdown
-  utils/registry.json          # utils、color、format、link、number
+  utils/registry.json          # utils、color、format、link、number、oss-image
   bundles/registry.json        # all 全量 + bundle-<分类> 聚合项（无文件，仅依赖）
 lib/
   utils.ts                     # cn()，本地开发与预览用
@@ -168,6 +168,7 @@ lib/
 app/
   page.tsx                     # 分类索引页
   preview/[name]/page.tsx      # 组件文档页（构建时静态生成）
+  demo/creator-search/         # 红人搜索 Demo（真实接口结构数据 + 全组件展示，不进 registry）
 ```
 
 ## 相关文档

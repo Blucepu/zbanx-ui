@@ -959,6 +959,147 @@
       "registryDependencies": [
         "zbanx-ai/zbanx-ui/utils"
       ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination component.",
+      "files": [
+        {
+          "path": "pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Kbd component.",
+      "files": [
+        {
+          "path": "kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "Native Select component.",
+      "files": [
+        {
+          "path": "native-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Aspect Ratio component.",
+      "files": [
+        {
+          "path": "aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-aspect-ratio"
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Alert Dialog component.",
+      "files": [
+        {
+          "path": "alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ],
+      "dependencies": [
+        "@radix-ui/react-alert-dialog",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "preview-card",
+      "type": "registry:ui",
+      "title": "Preview Card",
+      "description": "Preview Card component.",
+      "files": [
+        {
+          "path": "preview-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/preview-card.tsx"
+        }
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "resizable-sidebar",
+      "type": "registry:ui",
+      "title": "Resizable Sidebar",
+      "description": "Resizable Sidebar component.",
+      "files": [
+        {
+          "path": "resizable-sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable-sidebar.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "visually-hidden-input",
+      "type": "registry:ui",
+      "title": "Visually Hidden Input",
+      "description": "Visually Hidden Input component.",
+      "files": [
+        {
+          "path": "visually-hidden-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/visually-hidden-input.tsx"
+        }
+      ]
     }
   ]
 }
