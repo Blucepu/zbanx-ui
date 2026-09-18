@@ -1,6 +1,5 @@
 "use client";
 
-import { Pin } from "lucide-react";
 import { type ReactNode, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import {
@@ -8,6 +7,10 @@ import {
   getExtraLabels,
 } from "@/registry/zbanx/custom/creator-filter-core/format";
 import { CREATOR_FILTER_GROUPS } from "@/registry/zbanx/custom/creator-filter-core/groups";
+import {
+  resolvePinnedKeys,
+  togglePinnedKeys,
+} from "@/registry/zbanx/custom/creator-filter-core/pinned";
 import type {
   CreatorFilterFieldKey,
   CreatorFilterValues,
@@ -37,13 +40,16 @@ interface FilterChipsBarProps {
   ) => ReactNode | null;
   fieldPopoverClassName?: (key: CreatorFilterFieldKey) => string | undefined;
   renderChannelIcon?: (value: string) => ReactNode;
+  /** 固定在列表头的字段（默认按 values.__pinned 解析，无则回退各字段 pin 配置） */
+  pinnedKeys?: CreatorFilterFieldKey[];
+  /** 切换固定（默认直接改 values.__pinned 并经 onChange 透出） */
+  onTogglePin?: (key: CreatorFilterFieldKey) => void;
   /** 标签来源（独立使用时传入已加载选项，用于 Chip 回显；search-list 内已统一预取） */
   labelSources?: FilterValueLabelSources;
   /** 筛选恢复完成前展示骨架占位，避免空闪 */
   loading?: boolean;
 }
 
-// 列表头统一筛选项单行：固定项（无值也常驻占位）在前，非固定有值项按配置顺序紧随
 export default function FilterChipsBar({
   values,
   onChange,
@@ -52,6 +58,8 @@ export default function FilterChipsBar({
   renderFieldPopover,
   fieldPopoverClassName,
   renderChannelIcon,
+  pinnedKeys,
+  onTogglePin,
   labelSources,
   loading,
 }: FilterChipsBarProps) {
@@ -59,38 +67,43 @@ export default function FilterChipsBar({
   useFilterValueLabels(labelSources);
   const snapshotLabels = values.__labels;
   const [openKey, setOpenKey] = useState<string | null>(null);
-  const pinnedFields = useMemo(
-    () =>
-      CREATOR_FILTER_GROUPS.flatMap((group) => group.fields).filter(
-        (field) => field.pin
-      ),
-    []
+  const effectivePinnedKeys = useMemo(
+    () => resolvePinnedKeys(pinnedKeys ?? values.__pinned),
+    [pinnedKeys, values.__pinned]
   );
-  const otherEntries = useMemo(
+  const pinnedKeySet = useMemo(
+    () => new Set(effectivePinnedKeys),
+    [effectivePinnedKeys]
+  );
+  const orderedEntries = useMemo(
     () =>
-      CREATOR_FILTER_GROUPS.flatMap((group) => group.fields)
-        .filter((field) => !field.pin)
-        .flatMap((field) => {
+      CREATOR_FILTER_GROUPS.flatMap((group) => group.fields).flatMap(
+        (field) => {
+          const pinned = pinnedKeySet.has(field.key);
           const value = (values as Record<string, unknown>)[field.key];
           const fieldSnapshot = snapshotLabels?.[field.key];
           const text = formatValue(value, field.key, fieldSnapshot);
-          if (!text) return [];
-          const extraLabels = getExtraLabels(value, field.key, fieldSnapshot);
+          if (!pinned && !text) return [];
+          const extraLabels = text
+            ? getExtraLabels(value, field.key, fieldSnapshot)
+            : [];
           return [
             {
               key: field.key,
               label: field.label,
+              placeholder: field.placeholder,
+              pinned,
               text,
-              extraCount: extraLabels.length,
               extraLabels,
               firstValue:
-                Array.isArray(value) && value.length > 0
+                text && Array.isArray(value) && value.length > 0
                   ? String(value[0])
                   : null,
             },
           ];
-        }),
-    [values, snapshotLabels]
+        }
+      ),
+    [values, snapshotLabels, pinnedKeySet]
   );
   const activeCount = countActiveCreatorFilters(values);
 
@@ -100,9 +113,9 @@ export default function FilterChipsBar({
         className="flex min-w-0 flex-wrap items-center gap-1.5"
         aria-hidden="true"
       >
-        {pinnedFields.map((field) => (
+        {effectivePinnedKeys.map((key) => (
           <span
-            key={field.key}
+            key={key}
             className="h-6 w-24 animate-pulse rounded-full bg-muted"
           />
         ))}
@@ -111,73 +124,22 @@ export default function FilterChipsBar({
   }
 
   const closePopover = () => setOpenKey(null);
+  const handleTogglePin = (key: CreatorFilterFieldKey) => {
+    if (onTogglePin) {
+      onTogglePin(key);
+      return;
+    }
+    const next: PersistedCreatorFilterValues = {
+      ...values,
+      __pinned: togglePinnedKeys(resolvePinnedKeys(values.__pinned), key),
+    };
+    onChange(next);
+  };
 
   return (
     <div className="flex min-w-0 flex-wrap items-start gap-1.5">
       <div className="flex min-w-0 flex-1 flex-wrap items-center gap-1.5">
-        {pinnedFields.map((field) => {
-          const key = field.key;
-          const fieldSnapshot = snapshotLabels?.[key];
-          const rawValue = (values as Record<string, unknown>)[key];
-          const text = formatValue(rawValue, key, fieldSnapshot);
-          const extraLabels = text
-            ? getExtraLabels(rawValue, key, fieldSnapshot)
-            : [];
-          const firstValue =
-            text && Array.isArray(rawValue) && rawValue.length > 0
-              ? String(rawValue[0])
-              : null;
-          const popover = renderFieldPopover?.(key, closePopover);
-          return (
-            <FilterChip
-              key={key}
-              label={field.label}
-              popover={popover}
-              open={openKey === key}
-              onOpenChange={(open) => setOpenKey(open ? String(key) : null)}
-              fieldPopoverClassName={fieldPopoverClassName?.(key)}
-              onEditRequest={popover == null ? onEditRequest : undefined}
-              onClear={
-                text
-                  ? () => onChange({ ...values, [key]: undefined })
-                  : undefined
-              }
-            >
-              <span
-                title="已固定在列表头"
-                className="inline-flex shrink-0 items-center text-muted-foreground"
-                aria-hidden="true"
-              >
-                <Pin className="size-3 rotate-45" />
-              </span>
-              <span className="shrink-0 text-muted-foreground">
-                {field.label}：
-              </span>
-              {key === "channelType" && firstValue && renderChannelIcon
-                ? renderChannelIcon(firstValue)
-                : null}
-              <span
-                className={cn(
-                  "truncate",
-                  text ? "font-medium" : "text-muted-foreground"
-                )}
-                title={text ?? field.placeholder ?? "不限"}
-              >
-                {text ?? field.placeholder ?? "不限"}
-              </span>
-              {extraLabels.length > 0 && (
-                <OverflowTagsBadge
-                  className="rounded bg-muted px-1 font-normal text-muted-foreground"
-                  items={extraLabels.map((label, index) => ({
-                    key: String(index),
-                    label,
-                  }))}
-                />
-              )}
-            </FilterChip>
-          );
-        })}
-        {otherEntries.map((entry) => {
+        {orderedEntries.map((entry) => {
           const popover = renderFieldPopover?.(entry.key, closePopover);
           return (
             <FilterChip
@@ -190,7 +152,13 @@ export default function FilterChipsBar({
               }
               fieldPopoverClassName={fieldPopoverClassName?.(entry.key)}
               onEditRequest={popover == null ? onEditRequest : undefined}
-              onClear={() => onChange({ ...values, [entry.key]: undefined })}
+              onClear={
+                entry.text
+                  ? () => onChange({ ...values, [entry.key]: undefined })
+                  : undefined
+              }
+              pinned={entry.pinned}
+              onTogglePin={() => handleTogglePin(entry.key)}
             >
               <span className="shrink-0 text-muted-foreground">
                 {entry.label}：
@@ -200,10 +168,16 @@ export default function FilterChipsBar({
               renderChannelIcon
                 ? renderChannelIcon(entry.firstValue)
                 : null}
-              <span className="truncate font-medium" title={entry.text}>
-                {entry.text}
+              <span
+                className={cn(
+                  "min-w-0 truncate",
+                  entry.text ? "font-medium" : "text-muted-foreground"
+                )}
+                title={entry.text ?? entry.placeholder ?? "不限"}
+              >
+                {entry.text ?? entry.placeholder ?? "不限"}
               </span>
-              {entry.extraCount > 0 && (
+              {entry.extraLabels.length > 0 && (
                 <OverflowTagsBadge
                   className="rounded bg-muted px-1 font-normal text-muted-foreground"
                   items={entry.extraLabels.map((label, index) => ({

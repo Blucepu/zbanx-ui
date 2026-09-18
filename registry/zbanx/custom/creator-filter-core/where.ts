@@ -1,6 +1,7 @@
 import { useEffect, useSyncExternalStore } from "react";
 import type {
   CreatorFilterValues,
+  CreatorSortValue,
   FilterLabelSnapshot,
   NumberRange,
   PersistedCreatorFilterValues,
@@ -125,7 +126,20 @@ export function stripLabelSnapshot(
 ): CreatorFilterValues {
   const next = { ...values };
   delete next.__labels;
+  delete next.sort;
+  delete next.__pinned;
   return next;
+}
+
+/**
+ * 构建排序参数：无排序时返回 undefined（走后端默认序）。
+ * 返回通用结构；消费方按需映射为后端 orderBy（如 GQL $enum 包裹）。
+ */
+export function buildCreatorListOrder(
+  sort?: CreatorSortValue | null
+): { field: string; direction: string } | undefined {
+  if (!sort) return undefined;
+  return { field: sort.field, direction: sort.direction };
 }
 
 const panelLabelRegistry = new Map<string, Map<string, string>>();
@@ -217,7 +231,13 @@ export function collectPanelLabels(
   const out: FilterLabelSnapshot = {};
   const source = values as Record<string, unknown>;
   for (const [field, value] of Object.entries(source)) {
-    if (field === "__labels" || !Array.isArray(value)) continue;
+    if (
+      field === "__labels" ||
+      field === "__pinned" ||
+      field === "sort" ||
+      !Array.isArray(value)
+    )
+      continue;
     const record = readPanelLabels(field);
     if (!record) continue;
     const kept: Record<string, string> = {};
@@ -233,7 +253,8 @@ export function collectPanelLabels(
 
 export function countActiveCreatorFilters(values: CreatorFilterValues): number {
   return Object.entries(values).filter(([key, value]) => {
-    if (key === "__labels") return false;
+    if (key === "__labels" || key === "sort" || key === "__pinned")
+      return false;
     if (value == null) return false;
     if (Array.isArray(value)) return value.length > 0;
     if (typeof value === "object")

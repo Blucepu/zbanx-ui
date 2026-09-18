@@ -1,14 +1,27 @@
 "use client";
 
-import { CircleHelp, ExternalLink, VideoOff } from "lucide-react";
+import {
+  Activity,
+  AlertTriangle,
+  CircleHelp,
+  ExternalLink,
+  Eye,
+  type LucideIcon,
+  Play,
+  Users,
+  VideoOff,
+} from "lucide-react";
 import type { ReactNode } from "react";
 import { FaPlayCircle } from "react-icons/fa";
+import { getAbsoluteUrl } from "@/lib/link/index";
+import { getOssThumbUrl } from "@/lib/oss-image/index";
 import { cn } from "@/lib/utils";
 import { ClampedText } from "@/registry/zbanx/custom/clamped-text";
+import { CooperationPriceField } from "@/registry/zbanx/custom/cooperation-price-field";
 import CountryFlag from "@/registry/zbanx/custom/country-flag";
+import { IconButton } from "@/registry/zbanx/custom/icon-button";
 import { TagList } from "@/registry/zbanx/custom/tag-list";
 import { VideoCover } from "@/registry/zbanx/custom/video-cover";
-import { Button } from "@/registry/zbanx/ui/button";
 import { Checkbox } from "@/registry/zbanx/ui/checkbox";
 import { Skeleton } from "@/registry/zbanx/ui/skeleton";
 import {
@@ -16,19 +29,23 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/registry/zbanx/ui/tooltip";
-import { getAbsoluteUrl } from "@/lib/link/index";
-import { getOssThumbUrl } from "@/lib/oss-image/index";
 import { CreatorAvatar } from "./creator-avatar";
-import { formatMetric, formatVideoDate } from "./format";
+import {
+  formatCpm,
+  formatMetric,
+  formatRelativeTime,
+  formatVideoDate,
+} from "./format";
+import { getInactiveMetricsTip, getStaleDataWarning } from "./metric-freshness";
 import {
   type CreatorMetricTip,
   getCreatorMetricTip,
   normalizeCreatorPlatform,
 } from "./metric-tips";
-import type { CreatorChannelLite } from "./types";
+import type { CreatorChannelLite, CreatorPriceInquiry } from "./types";
 
 export type { CreatorVideoLite } from "./types";
-export type { CreatorChannelLite };
+export type { CreatorChannelLite, CreatorPriceInquiry };
 
 interface CreatorListItemProps {
   channel: CreatorChannelLite;
@@ -38,10 +55,12 @@ interface CreatorListItemProps {
   onToggle?: (selected: boolean) => void;
   /** 平台图标（默认不展示，调用方可注入 platform-icon 映射） */
   renderPlatformIcon?: (platform: string) => ReactNode;
+  /** 合作方式 code 转展示名（默认回退原值） */
+  getModeLabel?: (mode?: string) => string;
 }
 
 const GRID_CLASS =
-  "relative grid gap-3 border-b border-[#F0F0F0] px-2 py-4 transition-colors lg:grid-cols-[minmax(22.5rem,1fr)_minmax(260px,320px)_23rem_6rem] lg:items-stretch @min-[1460px]:grid-cols-[minmax(22.5rem,1fr)_minmax(532px,652px)_23rem_6rem] @min-[1820px]:grid-cols-[minmax(22.5rem,1fr)_minmax(532px,652px)_46.25rem_6rem]";
+  "relative grid gap-3 border-b border-[#F0F0F0] px-2 py-4 transition-colors lg:grid-cols-[minmax(22.5rem,1fr)_33.25rem_11.375rem_2rem] lg:items-stretch @min-[1346px]:grid-cols-[minmax(22.5rem,1fr)_33.25rem_23rem_2rem] @min-[1586px]:grid-cols-[minmax(22.5rem,1fr)_33.25rem_34.625rem_2rem] @min-[1756px]:grid-cols-[minmax(22.5rem,1fr)_33.25rem_46.25rem_2rem]";
 
 export function CreatorListItem({
   channel,
@@ -50,6 +69,7 @@ export function CreatorListItem({
   selected = false,
   onToggle,
   renderPlatformIcon,
+  getModeLabel = (mode) => mode || "-",
 }: CreatorListItemProps) {
   const name = channel.channelName || channel.channelURL || "-";
   const handle = channel.handle || "";
@@ -57,12 +77,34 @@ export function CreatorListItem({
     ? handle.startsWith("@")
       ? handle
       : `@${handle}`
-    : "";
+    : null;
   const videos = (channel.videos ?? []).slice(0, 4);
+  const categoryTags = [...new Set(channel.verticalCategories ?? [])];
+  const contentTypeTags = [...new Set(channel.contentTypes ?? [])];
   const statusTags = [
     channel.highFrequency ? "高频" : null,
     channel.unavailable ? "ZBANX不可用" : null,
   ].filter((tag): tag is string => tag !== null);
+  const flinkUpdatedAt =
+    channel.flinkCrawlerUpdatedAt ??
+    channel.flinkBaseUpdatedAt ??
+    channel.crawlerUpdatedAt;
+  const staleDataWarning = getStaleDataWarning(
+    channel.channelType ?? "",
+    channel.flinkCrawlerUpdatedAt,
+    channel.flinkBaseUpdatedAt
+  );
+  const inactiveMetricsTip = getInactiveMetricsTip(
+    channel.channelType ?? "",
+    {
+      avgView: channel.avgViews,
+      videoCount: channel.videoCount,
+      avgEngagementRate: channel.engagementRate,
+      lastPublishedAt: channel.lastPublishedAt,
+    },
+    channel.flinkCrawlerUpdatedAt,
+    channel.flinkBaseUpdatedAt
+  );
 
   return (
     <div
@@ -93,35 +135,58 @@ export function CreatorListItem({
             name={name}
           />
           <div className="min-w-0">
-            <a
-              href={getAbsoluteUrl(channel.channelURL) || "#"}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex max-w-full items-center gap-1.5 text-left"
-              aria-label="打开渠道主页"
-            >
-              <span
-                className="flex min-w-0 items-center gap-1 truncate font-semibold text-sm hover:text-primary"
-                title={name}
+            <div className="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1">
+              <a
+                href={getAbsoluteUrl(channel.channelURL) || "#"}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex min-w-0 max-w-full items-center gap-1 text-left"
+                aria-label="打开渠道主页"
               >
-                {name}
-                <ExternalLink className="size-4 shrink-0 text-muted-foreground group-hover:text-primary" />
-              </span>
+                <span
+                  className="truncate font-semibold text-sm hover:text-primary"
+                  title={name}
+                >
+                  {name}
+                </span>
+                <ExternalLink
+                  className="size-3.5 shrink-0 text-muted-foreground group-hover:text-primary"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+              </a>
               {channel.channelType && renderPlatformIcon?.(channel.channelType)}
               {channel.official && (
                 <span className="shrink-0 text-blue-500 text-xs">官方</span>
               )}
-            </a>
+            </div>
             <div className="mt-1 flex min-w-0 items-center gap-2 text-muted-foreground text-xs">
               <CountryFlag
                 value={channel.countryCode ?? undefined}
                 valueFormatted={channel.countryName ?? undefined}
               />
-              <span
-                className="min-w-0 truncate"
-                title={displayHandle || undefined}
-              >
-                {displayHandle}
+              {displayHandle && (
+                <span className="min-w-0 truncate" title={handle || undefined}>
+                  {displayHandle}
+                </span>
+              )}
+              {staleDataWarning && (
+                <Tooltip>
+                  <TooltipTrigger
+                    render={
+                      <span className="inline-flex shrink-0 cursor-help items-center gap-1 text-amber-600" />
+                    }
+                  >
+                    <AlertTriangle className="size-3.5" aria-hidden="true" />
+                    数据已过时
+                  </TooltipTrigger>
+                  <TooltipContent side="top" className="max-w-64 leading-5">
+                    {staleDataWarning}
+                  </TooltipContent>
+                </Tooltip>
+              )}
+              <span className="shrink-0 whitespace-nowrap">
+                更新于 {formatRelativeTime(flinkUpdatedAt)}
               </span>
             </div>
             {statusTags.length > 0 && (
@@ -145,14 +210,24 @@ export function CreatorListItem({
         />
       </div>
 
-      <div className="grid min-w-0 content-start gap-3 @min-[1460px]:grid-cols-2">
-        <div className="grid min-w-0 gap-2 rounded-lg bg-muted/40 px-4 py-2 text-xs">
-          <Metric label="粉丝" value={formatMetric(channel.fans)} />
-          <Metric label="总播放" value={formatMetric(channel.totalViews)} />
+      <div className="grid min-w-0 grid-cols-2 content-start gap-3">
+        <div className="grid min-w-0 content-start gap-2 rounded-lg bg-muted/40 px-4 py-2 text-xs lg:w-[16.25rem]">
+          <Metric
+            label="粉丝"
+            value={formatMetric(channel.fans)}
+            icon={Users}
+          />
+          <Metric
+            label="总播放"
+            value={formatMetric(channel.totalViews)}
+            icon={Play}
+          />
           <Metric
             label="均观看"
             value={formatMetric(channel.avgViews)}
+            icon={Eye}
             tip="avgViews"
+            warning={inactiveMetricsTip}
             platform={channel.channelType}
           />
           <Metric
@@ -162,27 +237,30 @@ export function CreatorListItem({
                 ? `${(channel.engagementRate * 100).toFixed(2)}%`
                 : "-"
             }
+            icon={Activity}
             tip="engagementRate"
+            warning={inactiveMetricsTip}
             platform={channel.channelType}
           />
         </div>
-        <div className="grid min-h-[100px] min-w-0 gap-2 rounded-lg bg-muted/40 px-4 py-2 text-xs">
-          <TagField label="主行业" values={channel.primaryCategories ?? []} />
-          <TagField
-            label="商业垂类"
-            values={channel.verticalCategories ?? []}
+        <div className="grid min-h-[100px] min-w-0 content-start gap-2 rounded-lg bg-muted/40 px-4 py-2 text-xs lg:w-[16.25rem]">
+          <TagField label="商业垂类" values={categoryTags} />
+          <TagField label="内容方向" values={contentTypeTags} />
+          <CooperationPriceField
+            inquiries={channel.inquiries ?? []}
+            getModeLabel={getModeLabel}
           />
-          <TagField label="内容方向" values={channel.contentTypes ?? []} />
-          <TagField label="合作方式" values={channel.cooperationModes ?? []} />
+          <Metric label="历史CPM" value={formatCpm(channel.cpm)} bold={false} />
         </div>
       </div>
 
+      {/* 档位阈值 = 描述下限 360 + 指数 532 + N 张视频 + 操作 32 + 间距杂项 52，各档保留原有余量；隐藏规则 max 取 min - 1 */}
       {videos.length > 0 ? (
-        <div className="grid min-w-0 grid-cols-2 gap-1 @min-[1820px]:grid-cols-4">
+        <div className="grid min-w-0 grid-cols-2 gap-1 lg:flex lg:flex-nowrap lg:items-center lg:gap-1 lg:@max-[1345px]:[&>*:nth-child(n+2)]:hidden lg:@max-[1585px]:[&>*:nth-child(n+3)]:hidden lg:@max-[1755px]:[&>*:nth-child(n+4)]:hidden">
           {videos.map((video) => (
             <div
               key={video.id}
-              className="relative aspect-video overflow-hidden rounded-md bg-muted"
+              className="relative aspect-video min-w-0 overflow-hidden rounded-md bg-muted lg:w-[11.375rem] lg:shrink-0"
             >
               <a
                 href={getAbsoluteUrl(video.url) || "#"}
@@ -216,8 +294,8 @@ export function CreatorListItem({
           ))}
         </div>
       ) : (
-        <div className="grid min-w-0 grid-cols-2 gap-1 @min-[1820px]:grid-cols-4">
-          <div className="flex aspect-video flex-col items-center justify-center gap-1.5 rounded-md bg-muted/40 px-2 text-center">
+        <div className="grid min-w-0 grid-cols-2 gap-1 lg:flex lg:flex-nowrap lg:items-center lg:gap-1">
+          <div className="flex aspect-video flex-col items-center justify-center gap-1.5 rounded-md bg-muted/40 px-2 text-center lg:w-[11.375rem] lg:shrink-0">
             <VideoOff
               className="size-5 text-muted-foreground/50"
               aria-hidden="true"
@@ -228,9 +306,14 @@ export function CreatorListItem({
       )}
 
       <div className="flex flex-row items-center justify-center gap-2 lg:flex-col lg:items-center lg:justify-center">
-        <Button size="sm" onClick={() => onView?.(channel)}>
-          快速查看
-        </Button>
+        <IconButton
+          size="md"
+          tooltip="快速查看"
+          aria-label="快速查看"
+          onClick={() => onView?.(channel)}
+        >
+          <Eye />
+        </IconButton>
       </div>
     </div>
   );
@@ -241,8 +324,10 @@ export function CreatorListItemSkeleton({
 }: {
   selectable?: boolean;
 }) {
+  const GRID_SKELETON_CLASS =
+    "relative grid gap-3 border-b border-[#F0F0F0] px-2 py-4 lg:grid-cols-[minmax(22.5rem,1fr)_33.25rem_11.375rem_2rem] lg:items-stretch @min-[1346px]:grid-cols-[minmax(22.5rem,1fr)_33.25rem_23rem_2rem] @min-[1586px]:grid-cols-[minmax(22.5rem,1fr)_33.25rem_34.625rem_2rem] @min-[1756px]:grid-cols-[minmax(22.5rem,1fr)_33.25rem_46.25rem_2rem]";
   return (
-    <div className={cn(GRID_CLASS, selectable && "pl-8")}>
+    <div className={cn(GRID_SKELETON_CLASS, selectable && "pl-8")}>
       {selectable && (
         <Skeleton className="absolute top-1/2 left-2 size-4 -translate-y-1/2 rounded-[4px]" />
       )}
@@ -263,23 +348,23 @@ export function CreatorListItemSkeleton({
           <Skeleton className="h-3 w-3/4" />
         </div>
       </div>
-      <div className="grid min-w-0 content-start gap-3 @min-[1460px]:grid-cols-2">
-        <div className="grid gap-2 rounded-lg bg-muted/40 px-4 py-3">
+      <div className="grid min-w-0 grid-cols-2 content-start gap-3">
+        <div className="grid gap-2 rounded-lg bg-muted/40 px-4 py-3 lg:w-[16.25rem]">
           {Array.from({ length: 4 }).map((_, index) => (
             <div
               key={`metric-${index}`}
-              className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2"
+              className="grid min-h-7 grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2"
             >
               <Skeleton className="h-3 w-12" />
               <Skeleton className="h-3 w-16" />
             </div>
           ))}
         </div>
-        <div className="grid gap-2 rounded-lg bg-muted/40 px-4 py-3">
+        <div className="grid gap-2 rounded-lg bg-muted/40 px-4 py-3 lg:w-[16.25rem]">
           {Array.from({ length: 3 }).map((_, index) => (
             <div
               key={`tag-${index}`}
-              className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2"
+              className="grid min-h-7 grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2"
             >
               <Skeleton className="h-3 w-12" />
               <Skeleton className="h-5 w-24 rounded-full" />
@@ -287,16 +372,16 @@ export function CreatorListItemSkeleton({
           ))}
         </div>
       </div>
-      <div className="grid min-w-0 grid-cols-2 gap-1 @min-[1820px]:grid-cols-4">
+      <div className="grid min-w-0 grid-cols-2 gap-1 lg:flex lg:flex-nowrap lg:items-center lg:gap-1 lg:@max-[1345px]:[&>*:nth-child(n+2)]:hidden lg:@max-[1585px]:[&>*:nth-child(n+3)]:hidden lg:@max-[1755px]:[&>*:nth-child(n+4)]:hidden">
         {Array.from({ length: 4 }).map((_, index) => (
           <Skeleton
             key={`video-${index}`}
-            className="aspect-video rounded-md"
+            className="aspect-video rounded-md lg:w-[11.375rem] lg:shrink-0"
           />
         ))}
       </div>
       <div className="flex flex-row items-center justify-center gap-2 lg:flex-col lg:items-center lg:justify-center">
-        <Skeleton className="h-8 w-20 rounded-md" />
+        <Skeleton className="size-8 rounded-md" />
       </div>
     </div>
   );
@@ -314,7 +399,7 @@ export function CreatorLibraryListSkeleton() {
 
 function TagField({ label, values }: { label: string; values: string[] }) {
   return (
-    <div className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2">
+    <div className="grid min-h-7 grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2">
       <span className="text-muted-foreground">{label}</span>
       <TagList values={values} />
     </div>
@@ -324,34 +409,61 @@ function TagField({ label, values }: { label: string; values: string[] }) {
 function Metric({
   label,
   value,
+  icon: Icon,
   tip,
+  warning,
   platform,
+  bold = true,
 }: {
   label: string;
   value: string;
+  icon?: LucideIcon;
   tip?: CreatorMetricTip;
+  warning?: string | null;
   platform?: string | null;
+  /** 值是否加粗展示，默认加粗 */
+  bold?: boolean;
 }) {
   return (
-    <div className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2">
+    <div className="grid min-h-7 grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-2">
       <span className="inline-flex items-center gap-1 text-muted-foreground">
+        {Icon && <Icon className="size-3.5 shrink-0" aria-hidden="true" />}
         {label}
-        {tip && platform && (
+        {warning ? (
           <Tooltip>
             <TooltipTrigger
               render={
-                <span className="inline-flex cursor-pointer items-center text-muted-foreground/70 hover:text-muted-foreground" />
+                <span className="inline-flex cursor-help items-center text-amber-600" />
               }
             >
-              <CircleHelp className="size-3.5" aria-hidden="true" />
+              <AlertTriangle className="size-3.5" aria-hidden="true" />
             </TooltipTrigger>
             <TooltipContent side="top" className="max-w-64 leading-5">
-              {getCreatorMetricTip(tip, normalizeCreatorPlatform(platform))}
+              {warning}
             </TooltipContent>
           </Tooltip>
+        ) : (
+          tip &&
+          platform && (
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <span className="inline-flex cursor-pointer items-center text-muted-foreground/70 hover:text-muted-foreground" />
+                }
+              >
+                <CircleHelp className="size-3.5" aria-hidden="true" />
+              </TooltipTrigger>
+              <TooltipContent side="top" className="max-w-64 leading-5">
+                {getCreatorMetricTip(tip, normalizeCreatorPlatform(platform))}
+              </TooltipContent>
+            </Tooltip>
+          )
         )}
       </span>
-      <span className="max-w-28 truncate font-medium" title={value}>
+      <span
+        className={cn("max-w-28 truncate", bold ? "font-bold" : "font-medium")}
+        title={value}
+      >
         {value}
       </span>
     </div>

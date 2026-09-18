@@ -69,7 +69,6 @@ export function VideoCover({
           <span className="text-[10px] text-zinc-500">加载失败</span>
         </div>
       )}
-      {/* 加载中旋转指示器 */}
       {src && status === "loading" && (
         <div className="absolute inset-0 flex items-center justify-center">
           <Loader className="size-5 animate-spin text-zinc-500" />

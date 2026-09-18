@@ -3,7 +3,7 @@
 基于 [shadcn registry](https://ui.shadcn.com/docs/registry) 机制的独立组件库，
 复用 `shadcn` CLI 分发，开箱即用。
 
-共 **147** 个 registry 项：`ui` 基础组件（57）· `custom` 自研业务组件（22）·
+共 **150** 个 registry 项：`ui` 基础组件（57）· `custom` 自研业务组件（25）·
 `ai-elements` AI 对话组件（48）· `ai-agents`（2）· `atom` 原子组件（2）·
 `hooks`（2）· `utils` 工具函数（6）· `bundles` 聚合安装项（8）。
 
@@ -36,7 +36,7 @@ bunx --bun shadcn@latest add zbanx-ai/zbanx-ui/use-mobile
 CLI 的 `--all` 不支持按命名空间过滤，因此本仓库提供了聚合项：
 
 ```bash
-# 安装全部 139 个组件
+# 安装全部 142 个组件
 bunx --bun shadcn@latest add zbanx-ai/zbanx-ui/all
 
 # 按分类安装

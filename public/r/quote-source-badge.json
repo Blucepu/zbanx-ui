@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "quote-source-badge",
+  "title": "Quote Source Badge",
+  "description": "Badge for quotation source with optional stale marker.",
+  "registryDependencies": [
+    "zbanx-ai/zbanx-ui/badge",
+    "zbanx-ai/zbanx-ui/utils"
+  ],
+  "files": [
+    {
+      "path": "registry/zbanx/custom/quote-source-badge/index.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Badge } from \"@/registry/zbanx/ui/badge\";\n\nexport type RawQuoteSource =\n  | \"price_impressions\"\n  | \"price_no_impressions\"\n  | \"submit_quotation\"\n  | \"quotation\"\n  | \"estimate\";\n\nexport const DEFAULT_QUOTE_SOURCE: RawQuoteSource = \"estimate\";\n\nexport const RAW_QUOTE_SOURCE_LABELS: Record<RawQuoteSource, string> = {\n  price_impressions: \"真实合作（有曝光）\",\n  price_no_impressions: \"真实合作（无曝光）\",\n  submit_quotation: \"提报报价\",\n  quotation: \"达人报价\",\n  estimate: \"预估报价\",\n};\n\nexport const RAW_QUOTE_SOURCE_BADGE_CLASS_NAMES: Record<\n  RawQuoteSource,\n  string\n> = {\n  price_impressions: \"border-transparent bg-primary text-primary-foreground\",\n  price_no_impressions: \"border-transparent bg-primary text-primary-foreground\",\n  submit_quotation: \"border-transparent bg-primary/50 text-primary-foreground\",\n  quotation: \"border-transparent bg-primary/50 text-primary-foreground\",\n  estimate: \"border-transparent bg-secondary text-secondary-foreground\",\n};\n\nexport function normalizeQuoteSource(source?: string | null): RawQuoteSource {\n  const normalized = (source ?? \"\").trim();\n  return (Object.keys(RAW_QUOTE_SOURCE_LABELS) as RawQuoteSource[]).includes(\n    normalized as RawQuoteSource\n  )\n    ? (normalized as RawQuoteSource)\n    : DEFAULT_QUOTE_SOURCE;\n}\n\ninterface QuoteSourceBadgeProps {\n  source?: string | null;\n  stale?: boolean;\n  className?: string;\n}\n\nexport function QuoteSourceBadge({\n  source,\n  stale = false,\n  className,\n}: QuoteSourceBadgeProps) {\n  const normalized = normalizeQuoteSource(source);\n  return (\n    <span\n      className={cn(\"flex min-h-5 flex-wrap items-center gap-1\", className)}\n    >\n      <Badge\n        variant=\"secondary\"\n        className={cn(RAW_QUOTE_SOURCE_BADGE_CLASS_NAMES[normalized])}\n      >\n        {RAW_QUOTE_SOURCE_LABELS[normalized]}\n      </Badge>\n      {stale && (\n        <span className=\"rounded-sm border border-amber-500/40 px-1 text-[10px] text-amber-600 dark:text-amber-500\">\n          超2年\n        </span>\n      )}\n    </span>\n  );\n}\n\nexport default QuoteSourceBadge;\n",
+      "type": "registry:component",
+      "target": "@components/custom/quote-source-badge/index.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

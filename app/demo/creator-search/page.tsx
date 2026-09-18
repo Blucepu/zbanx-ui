@@ -4,12 +4,15 @@
  * 红人搜索 Demo：浏览器直连 QA 接口的真实数据，用移植组件 1:1 还原红人搜索列表。
  * 接口：POST https://v2-api-qa.tbanx.cn/resource/query?__query=creatorChannelListV2&__flag=
  */
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type {
   CreatorFilterValues,
+  CreatorSortValue,
   PersistedCreatorFilterValues,
 } from "@/registry/zbanx/custom/creator-filter-core/types";
 import {
+  buildCreatorListOrder,
   buildCreatorListWhere,
   stripLabelSnapshot,
 } from "@/registry/zbanx/custom/creator-filter-core/where";
@@ -128,9 +131,9 @@ function getCookieToken(): string | null {
   return null;
 }
 
-const FIELDS = `count items { id channelName channelURL channelType avatar avatarOssURL countryCode quantity flow official available description uniqueID crawlerUpdatedAt creator { name } summary { videoCount viewCount avgView avgEngagementRate } flinkChannel { verticalCategory primaryVerticalCategory contentType isHighFrequency } manualCategoryTypes { tag } channelTypeCooperationModes latestVideos ( size: 4 ) { id title url cover ossCoverURL publishedAt totalView } }`;
+const FIELDS = `count items { id channelName channelURL channelType avatar avatarOssURL countryCode quantity flow official available description uniqueID crawlerUpdatedAt creatorID creator { id name inquiries { id cooperationMode cooperationModes inquiryMin inquiryMax createdAt } } summary { videoCount viewCount avgView avgEngagementRate lastPublishedAt } flinkChannel { verticalCategory primaryVerticalCategory contentType isHighFrequency crawlerUpdatedAt baseUpdatedAt cpm } manualCategoryTypes { tag } channelTypeCooperationModes latestVideos ( size: 4 ) { id title url cover ossCoverURL publishedAt totalView } }`;
 
-/** 临时 GraphQL 字面量序列化（demo 够用即可） */
+const VIDEO_FIELDS = `count items { id title url cover ossCoverURL publishedAt totalView }`; /** 临时 GraphQL 字面量序列化（demo 够用即可） */
 function toGraphQLValue(value: unknown): string {
   if (value == null) return "null";
   if (Array.isArray(value)) return `[${value.map(toGraphQLValue).join(", ")}]`;
@@ -147,12 +150,15 @@ function toGraphQLValue(value: unknown): string {
 
 async function fetchCreatorPage(
   page: number,
-  values: CreatorFilterValues
+  values: CreatorFilterValues,
+  sort?: CreatorSortValue | null
 ): Promise<PageResult> {
   const where = buildCreatorListWhere(stripLabelSnapshot(values));
   const args = [`page: ${page}`, `size: ${PAGE_SIZE}`];
   if (Object.keys(where).length > 0)
     args.push(`where: ${toGraphQLValue(where)}`);
+  const order = buildCreatorListOrder(sort);
+  if (order) args.push(`orderBy: ${toGraphQLValue(order)}`);
   const query = `query { creatorChannelListV2 ( ${args.join(" ")} ) { ${FIELDS} } }`;
   const cookieToken = getCookieToken();
   const res = await fetch(ENDPOINT, {
@@ -178,6 +184,60 @@ async function fetchCreatorPage(
   return { items: payload?.items ?? [], total: payload?.count ?? 0 };
 }
 
+async function fetchCreatorVideos(
+  channelId: string,
+  page: number,
+  size: number
+): Promise<{
+  items: NonNullable<CreatorChannelLite["videos"]>;
+  total: number;
+}> {
+  const query = `query { creatorVideoListV2 ( page: ${page} size: ${size} where: ${toGraphQLValue({ channel: { channels: [channelId] } })} orderBy: ${toGraphQLValue({ field: "published_at", direction: "DESC" })} ) { ${VIDEO_FIELDS} } }`;
+  const cookieToken = getCookieToken();
+  const res = await fetch(ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      ...(cookieToken ? { Authorization: `Bearer ${cookieToken}` } : {}),
+    },
+    credentials: "include",
+    body: JSON.stringify({ query }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data?.message || `请求失败（${res.status}）`);
+  if (data?.errors?.length) {
+    throw new Error(
+      data.errors.map((e: { message: string }) => e.message).join("; ")
+    );
+  }
+  const payload = data?.data?.creatorVideoListV2;
+  const items = (payload?.items ?? []).map(
+    (
+      v: CreatorChannelRaw["latestVideos"] extends
+        | (infer T)[]
+        | null
+        | undefined
+        ? NonNullable<T>
+        : never
+    ) => ({
+      id: v.id,
+      title: v.title,
+      url: v.url,
+      coverUrl: v.ossCoverURL ?? v.cover,
+      publishedAt: v.publishedAt,
+      totalView: v.totalView,
+    })
+  );
+  return { items, total: payload?.count ?? 0 };
+}
+
+function getDetailHref(channel: CreatorChannelLite): string | null {
+  const creatorId = channel.creatorId;
+  if (creatorId == null || creatorId === "") return null;
+  return `https://v2-qa-banker.tbanx.cn/workspace/creators/${creatorId}?channelId=${channel.id}&source=creator-library&tab=overview`;
+}
+
 export default function CreatorSearchDemoPage() {
   const [values, setValues] = useState<PersistedCreatorFilterValues>({});
   const [items, setItems] = useState<
@@ -200,6 +260,7 @@ export default function CreatorSearchDemoPage() {
     async (
       nextPage: number,
       nextValues: CreatorFilterValues,
+      nextSort: CreatorSortValue | null,
       append: boolean
     ) => {
       if (append) setLoadingMore(true);
@@ -210,7 +271,8 @@ export default function CreatorSearchDemoPage() {
       try {
         const { items: raws, total: t } = await fetchCreatorPage(
           nextPage,
-          nextValues
+          nextValues,
+          nextSort
         );
         const mapped = raws.map(adaptChannel);
         setItems((prev) => (append ? [...prev, ...mapped] : mapped));
@@ -235,70 +297,94 @@ export default function CreatorSearchDemoPage() {
     if (initialRef.current) return;
     initialRef.current = true;
     setHasAuth(getCookieToken() != null);
-    void loadPage(1, {}, false);
+    void loadPage(1, {}, null, false);
   }, [loadPage]);
 
   const handleApplyFilters = useCallback(
     (next: PersistedCreatorFilterValues) => {
       setValues(next);
-      void loadPage(1, next, false);
+      void loadPage(1, next, next.sort ?? null, false);
+    },
+    [loadPage]
+  );
+
+  const handleSortChange = useCallback(
+    (next: CreatorSortValue | null) => {
+      setValues((prev) => {
+        const merged: PersistedCreatorFilterValues = { ...prev };
+        if (next) merged.sort = next;
+        else delete merged.sort;
+        void loadPage(1, merged, next, false);
+        return merged;
+      });
     },
     [loadPage]
   );
 
   const handleLoadMore = useCallback(() => {
-    void loadPage(page + 1, values, true);
+    void loadPage(page + 1, values, values.sort ?? null, true);
   }, [loadPage, page, values]);
 
   return (
-    <div className="flex min-h-svh w-full flex-col px-4 py-6">
-      {hasAuth === false && (
-        <p className="mb-3 text-orange-500 text-xs">
-          未读取到同域登录 Cookie（qa.auth_token / auth_token），接口将返回
-          unauthorized。请先在 .tbanx.cn 域名下登录 web-pm-im 后刷新本页。
-        </p>
-      )}
-      <div className="h-[calc(100svh-3rem)] min-h-[600px] w-full">
-        <CreatorSearchList
-          values={values}
-          onFiltersChange={setValues}
-          onClearFilters={() => {
-            setValues({});
-            setSelectedIds([]);
-            void loadPage(1, {}, false);
-          }}
-          onApplyFilters={handleApplyFilters}
-          drawerWidth={720}
-          optionsByField={OPTIONS_BY_FIELD}
-          sources={SOURCES}
-          {...ICONS}
-          items={items}
-          total={total}
-          loadedPages={page}
-          hasMore={items.length < total}
-          loading={loading}
-          loadingMore={loadingMore}
-          error={error}
-          onLoadMore={handleLoadMore}
-          onRetry={() => loadPage(1, values, false)}
-          previewChannel={preview}
-          previewOpen={previewOpen}
-          onPreviewChange={(open, c) => {
-            setPreviewOpen(open);
-            setPreview(
-              (c as CreatorChannelLite & { updatedAgo?: string }) ?? null
-            );
-          }}
-          selectable
-          selectedIds={selectedIds}
-          onToggleSelect={(id, next) =>
-            setSelectedIds((prev) =>
-              next ? [...prev, id] : prev.filter((x) => x !== id)
-            )
-          }
-          onClearSelection={() => setSelectedIds([])}
-        />
+    <QueryClientProvider client={queryClient}>
+      <div className="flex min-h-svh w-full flex-col px-4 py-6">
+        {hasAuth === false && (
+          <p className="mb-3 text-orange-500 text-xs">
+            未读取到同域登录 Cookie（qa.auth_token / auth_token），接口将返回
+            unauthorized。请先在 .tbanx.cn 域名下登录 web-pm-im 后刷新本页。
+          </p>
+        )}
+        <div className="h-[calc(100svh-3rem)] min-h-[600px] w-full">
+          <CreatorSearchList
+            values={values}
+            onFiltersChange={setValues}
+            onClearFilters={() => {
+              setValues({});
+              setSelectedIds([]);
+              void loadPage(1, {}, null, false);
+            }}
+            onApplyFilters={handleApplyFilters}
+            sort={values.sort ?? null}
+            onSortChange={handleSortChange}
+            getModeLabel={(mode) => mode || "-"}
+            fetchVideos={fetchCreatorVideos}
+            getDetailHref={getDetailHref}
+            drawerWidth={720}
+            optionsByField={OPTIONS_BY_FIELD}
+            sources={SOURCES}
+            {...ICONS}
+            items={items}
+            total={total}
+            loadedPages={page}
+            hasMore={items.length < total}
+            loading={loading}
+            loadingMore={loadingMore}
+            error={error}
+            onLoadMore={handleLoadMore}
+            onRetry={() => loadPage(1, values, values.sort ?? null, false)}
+            previewChannel={preview}
+            previewOpen={previewOpen}
+            onPreviewChange={(open, c) => {
+              setPreviewOpen(open);
+              setPreview(
+                (c as CreatorChannelLite & { updatedAgo?: string }) ?? null
+              );
+            }}
+            selectable
+            selectedIds={selectedIds}
+            onToggleSelect={(id, next) =>
+              setSelectedIds((prev) =>
+                next ? [...prev, id] : prev.filter((x) => x !== id)
+              )
+            }
+            onClearSelection={() => setSelectedIds([])}
+          />
+        </div>
       </div>
-    </div>
+    </QueryClientProvider>
   );
 }
+
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { retry: false, refetchOnWindowFocus: false } },
+});

@@ -1256,8 +1256,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/utils",
-        "zbanx-ai/zbanx-ui/oss-image"
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "files": [
         {
@@ -1351,6 +1352,11 @@
           "path": "registry/zbanx/custom/creator-filter-core/format.ts",
           "type": "registry:component",
           "target": "@components/custom/creator-filter-core/format.ts"
+        },
+        {
+          "path": "registry/zbanx/custom/creator-filter-core/pinned.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/pinned.ts"
         }
       ],
       "type": "registry:component"
@@ -1499,10 +1505,12 @@
       "registryDependencies": [
         "zbanx-ai/zbanx-ui/avatar",
         "zbanx-ai/zbanx-ui/badge",
-        "zbanx-ai/zbanx-ui/button",
         "zbanx-ai/zbanx-ui/checkbox",
         "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/cooperation-price-field",
         "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/icon-button",
         "zbanx-ai/zbanx-ui/link",
         "zbanx-ai/zbanx-ui/number",
         "zbanx-ai/zbanx-ui/oss-image",
@@ -1537,6 +1545,11 @@
           "path": "registry/zbanx/custom/creator-list-item/creator-avatar.tsx",
           "type": "registry:component",
           "target": "@components/custom/creator-list-item/creator-avatar.tsx"
+        },
+        {
+          "path": "registry/zbanx/custom/creator-list-item/metric-freshness.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/metric-freshness.ts"
         }
       ],
       "type": "registry:component"
@@ -1547,18 +1560,22 @@
       "description": "Creator detail drawer (pure UI).",
       "dependencies": [
         "lucide-react",
-        "react-icons"
+        "@tanstack/react-query"
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/creator-list-item",
-        "zbanx-ai/zbanx-ui/tag-list",
-        "zbanx-ai/zbanx-ui/video-cover",
-        "zbanx-ai/zbanx-ui/country-flag",
         "zbanx-ai/zbanx-ui/button",
-        "zbanx-ai/zbanx-ui/sheet",
-        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-list-item",
         "zbanx-ai/zbanx-ui/link",
-        "zbanx-ai/zbanx-ui/utils"
+        "zbanx-ai/zbanx-ui/quote-source-badge",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/video-cover"
       ],
       "files": [
         {
@@ -1589,7 +1606,8 @@
         "zbanx-ai/zbanx-ui/empty",
         "zbanx-ai/zbanx-ui/icon-button",
         "zbanx-ai/zbanx-ui/number",
-        "zbanx-ai/zbanx-ui/utils"
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/creator-sort"
       ],
       "files": [
         {
@@ -1699,6 +1717,70 @@
           "path": "registry/zbanx/custom/pagination-classic/index.tsx",
           "type": "registry:component",
           "target": "@components/custom/pagination-classic/index.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "creator-sort",
+      "title": "Creator Sort",
+      "description": "Creator sort popover with per-field ASC/DESC toggles.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/zbanx/custom/creator-sort/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-sort/index.tsx"
+        },
+        {
+          "path": "registry/zbanx/custom/creator-sort/config.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-sort/config.ts"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "cooperation-price-field",
+      "title": "Cooperation Price Field",
+      "description": "Cooperation mode price row with inquiry history popover.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/zbanx/custom/cooperation-price-field/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/cooperation-price-field/index.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "quote-source-badge",
+      "title": "Quote Source Badge",
+      "description": "Badge for quotation source with optional stale marker.",
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/badge",
+        "zbanx-ai/zbanx-ui/utils"
+      ],
+      "files": [
+        {
+          "path": "registry/zbanx/custom/quote-source-badge/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/quote-source-badge/index.tsx"
         }
       ],
       "type": "registry:component"
@@ -2929,6 +3011,7 @@
         "zbanx-ai/zbanx-ui/collapsible",
         "zbanx-ai/zbanx-ui/color",
         "zbanx-ai/zbanx-ui/command",
+        "zbanx-ai/zbanx-ui/cooperation-price-field",
         "zbanx-ai/zbanx-ui/country-flag",
         "zbanx-ai/zbanx-ui/creator-filter-bar",
         "zbanx-ai/zbanx-ui/creator-filter-core",
@@ -2936,6 +3019,7 @@
         "zbanx-ai/zbanx-ui/creator-list-item",
         "zbanx-ai/zbanx-ui/creator-profile-drawer",
         "zbanx-ai/zbanx-ui/creator-search-list",
+        "zbanx-ai/zbanx-ui/creator-sort",
         "zbanx-ai/zbanx-ui/data-select",
         "zbanx-ai/zbanx-ui/dialog",
         "zbanx-ai/zbanx-ui/dropdown-menu",
@@ -2971,6 +3055,7 @@
         "zbanx-ai/zbanx-ui/progress",
         "zbanx-ai/zbanx-ui/query-list",
         "zbanx-ai/zbanx-ui/questionnaire",
+        "zbanx-ai/zbanx-ui/quote-source-badge",
         "zbanx-ai/zbanx-ui/radio-group",
         "zbanx-ai/zbanx-ui/resizable",
         "zbanx-ai/zbanx-ui/resizable-sidebar",
@@ -3132,6 +3217,7 @@
       "description": "Installs every item in the custom category (22 items).",
       "registryDependencies": [
         "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/cooperation-price-field",
         "zbanx-ai/zbanx-ui/country-flag",
         "zbanx-ai/zbanx-ui/creator-filter-bar",
         "zbanx-ai/zbanx-ui/creator-filter-core",
@@ -3139,6 +3225,7 @@
         "zbanx-ai/zbanx-ui/creator-list-item",
         "zbanx-ai/zbanx-ui/creator-profile-drawer",
         "zbanx-ai/zbanx-ui/creator-search-list",
+        "zbanx-ai/zbanx-ui/creator-sort",
         "zbanx-ai/zbanx-ui/data-select",
         "zbanx-ai/zbanx-ui/grouped-check-panel",
         "zbanx-ai/zbanx-ui/icon-button",
@@ -3149,6 +3236,7 @@
         "zbanx-ai/zbanx-ui/platform-icon",
         "zbanx-ai/zbanx-ui/popover-confirm",
         "zbanx-ai/zbanx-ui/query-list",
+        "zbanx-ai/zbanx-ui/quote-source-badge",
         "zbanx-ai/zbanx-ui/responsive-filter-layout",
         "zbanx-ai/zbanx-ui/tag-input",
         "zbanx-ai/zbanx-ui/tag-list",

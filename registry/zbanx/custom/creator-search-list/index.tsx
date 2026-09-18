@@ -3,13 +3,19 @@
 import { CloudOff, Filter, Grid2X2, LayoutList } from "lucide-react";
 import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { LuLoader } from "react-icons/lu";
+import { formatNumber } from "@/lib/number/formation";
 import { cn } from "@/lib/utils";
 import FilterChipsBar from "@/registry/zbanx/custom/creator-filter-bar";
 import { CREATOR_FILTER_GROUPS } from "@/registry/zbanx/custom/creator-filter-core/groups";
+import {
+  resolvePinnedKeys,
+  togglePinnedKeys,
+} from "@/registry/zbanx/custom/creator-filter-core/pinned";
 import type {
   CreatorFilterFieldKey,
   CreatorFilterOption,
   CreatorFilterValues,
+  CreatorSortValue,
   PersistedCreatorFilterValues,
 } from "@/registry/zbanx/custom/creator-filter-core/types";
 import {
@@ -30,7 +36,11 @@ import {
   CreatorListItem,
 } from "@/registry/zbanx/custom/creator-list-item";
 import type { CreatorChannelLite } from "@/registry/zbanx/custom/creator-list-item/types";
-import { CreatorProfileDrawer } from "@/registry/zbanx/custom/creator-profile-drawer";
+import {
+  CreatorProfileDrawer,
+  type CreatorVideoPage,
+} from "@/registry/zbanx/custom/creator-profile-drawer";
+import { CreatorSort } from "@/registry/zbanx/custom/creator-sort";
 import { IconButton } from "@/registry/zbanx/custom/icon-button";
 import { Button } from "@/registry/zbanx/ui/button";
 import {
@@ -48,7 +58,6 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/registry/zbanx/ui/empty";
-import { formatNumber } from "@/lib/number/formation";
 
 export interface CreatorSearchListProps {
   title?: string;
@@ -67,6 +76,24 @@ export interface CreatorSearchListProps {
   renderChannelOptionPrefix?: (option: CreatorFilterOption) => ReactNode;
   renderChannelItemIcon?: (value: string) => ReactNode;
   renderPlatformIcon?: (platform: string) => ReactNode;
+  /** 合作方式 code 转展示名（默认回退原值），透传给列表行与详情抽屉 */
+  getModeLabel?: (mode?: string) => string;
+  /** 详情抽屉按渠道分页拉取视频（默认仅展示 channel.videos） */
+  fetchVideos?: (
+    channelId: string,
+    page: number,
+    size: number
+  ) => Promise<CreatorVideoPage>;
+  /** 详情抽屉 查看详情外链（默认不展示按钮） */
+  getDetailHref?: (channel: CreatorChannelLite) => string | null;
+  /** 排序值（默认取 values.sort envelope） */
+  sort?: CreatorSortValue | null;
+  /** 排序变化（默认改 values.sort envelope 并经 onFiltersChange 透出） */
+  onSortChange?: (sort: CreatorSortValue | null) => void;
+  /** 列表头固定字段（默认按 values.__pinned 解析） */
+  pinnedKeys?: CreatorFilterFieldKey[];
+  /** 切换固定（默认改 values.__pinned envelope 并经 onFiltersChange 透出） */
+  onTogglePin?: (key: CreatorFilterFieldKey) => void;
   renderFieldPopover?: (
     key: CreatorFilterFieldKey,
     close: () => void
@@ -98,6 +125,7 @@ export interface CreatorSearchListProps {
     | ReactNode
     | ((info: {
         pageCount: number;
+        loadedCount: number;
         total: number;
         isError: boolean;
         retry?: () => void;
@@ -118,6 +146,13 @@ export function CreatorSearchList({
   renderChannelOptionPrefix,
   renderChannelItemIcon,
   renderPlatformIcon,
+  getModeLabel = (mode) => mode || "-",
+  fetchVideos,
+  getDetailHref,
+  sort: sortProp,
+  onSortChange,
+  pinnedKeys: pinnedKeysProp,
+  onTogglePin,
   renderFieldPopover,
   fieldPopoverClassName,
   items,
@@ -214,6 +249,37 @@ export function CreatorSearchList({
     fieldPopoverClassName ?? getFieldPopoverClassName;
   const activeCount = countActiveCreatorFilters(values);
 
+  const resolvedSort =
+    sortProp !== undefined ? sortProp : (values.sort ?? null);
+  const handleSortChange = (next: CreatorSortValue | null) => {
+    if (onSortChange) {
+      onSortChange(next);
+      return;
+    }
+    const merged: PersistedCreatorFilterValues = { ...valuesRef.current };
+    if (next) merged.sort = next;
+    else delete merged.sort;
+    onFiltersChange(merged);
+  };
+
+  const resolvedPinnedKeys = useMemo(
+    () => resolvePinnedKeys(pinnedKeysProp ?? values.__pinned),
+    [pinnedKeysProp, values.__pinned]
+  );
+  const handleTogglePin = (key: CreatorFilterFieldKey) => {
+    if (onTogglePin) {
+      onTogglePin(key);
+      return;
+    }
+    onFiltersChange({
+      ...valuesRef.current,
+      __pinned: togglePinnedKeys(
+        resolvePinnedKeys(valuesRef.current.__pinned),
+        key
+      ),
+    });
+  };
+
   const loadedIds = useMemo(() => items.map((c) => c.id), [items]);
   const selectedSet = useMemo(() => new Set(selectedIds), [selectedIds]);
   const selectedInList = useMemo(
@@ -296,9 +362,10 @@ export function CreatorSearchList({
                 </span>
               )}
             </Button>
+            <CreatorSort value={resolvedSort} onChange={handleSortChange} />
             <div className="flex">
               <IconButton
-                size="sm"
+                size="md"
                 tooltip="列表视图"
                 aria-label="列表视图"
                 aria-pressed="true"
@@ -306,7 +373,7 @@ export function CreatorSearchList({
                 <LayoutList />
               </IconButton>
               <IconButton
-                size="sm"
+                size="md"
                 tooltip="表格视图（暂未开放）"
                 aria-label="表格视图（暂未开放）"
                 disabled
@@ -330,6 +397,8 @@ export function CreatorSearchList({
             renderFieldPopover={resolvedFieldPopover}
             fieldPopoverClassName={resolvedPopoverClassName}
             renderChannelIcon={renderPlatformIcon ?? renderChannelItemIcon}
+            pinnedKeys={resolvedPinnedKeys}
+            onTogglePin={handleTogglePin}
             loading={loading && items.length === 0}
           />
         </div>
@@ -375,6 +444,7 @@ export function CreatorSearchList({
                     renderPlatformIcon={
                       renderPlatformIcon ?? renderChannelItemIcon
                     }
+                    getModeLabel={getModeLabel}
                   />
                 ))}
                 <div
@@ -428,6 +498,7 @@ export function CreatorSearchList({
                   typeof footerExtra === "function" ? (
                     footerExtra({
                       pageCount: loadedPages ?? 1,
+                      loadedCount: items.length,
                       total: total ?? items.length,
                       isError: error != null,
                       retry: onRetry,
@@ -439,7 +510,7 @@ export function CreatorSearchList({
                   <>
                     <span className="text-muted-foreground">
                       已加载第 {loadedPages ?? 1} 页 · 共{" "}
-                      {formatNumber(total ?? items.length)} 条
+                      {formatNumber(items.length)} 条
                     </span>
                     {error && (
                       <Button variant="outline" size="sm" onClick={onRetry}>
@@ -460,6 +531,9 @@ export function CreatorSearchList({
           onPreviewChange?.(open, open ? previewChannel : null)
         }
         renderPlatformIcon={renderPlatformIcon ?? renderChannelItemIcon}
+        getModeLabel={getModeLabel}
+        fetchVideos={fetchVideos}
+        getDetailHref={getDetailHref}
       />
     </div>
   );

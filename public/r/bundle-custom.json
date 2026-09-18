@@ -5,6 +5,7 @@
   "description": "Installs every item in the custom category (22 items).",
   "registryDependencies": [
     "zbanx-ai/zbanx-ui/clamped-text",
+    "zbanx-ai/zbanx-ui/cooperation-price-field",
     "zbanx-ai/zbanx-ui/country-flag",
     "zbanx-ai/zbanx-ui/creator-filter-bar",
     "zbanx-ai/zbanx-ui/creator-filter-core",
@@ -12,6 +13,7 @@
     "zbanx-ai/zbanx-ui/creator-list-item",
     "zbanx-ai/zbanx-ui/creator-profile-drawer",
     "zbanx-ai/zbanx-ui/creator-search-list",
+    "zbanx-ai/zbanx-ui/creator-sort",
     "zbanx-ai/zbanx-ui/data-select",
     "zbanx-ai/zbanx-ui/grouped-check-panel",
     "zbanx-ai/zbanx-ui/icon-button",
@@ -22,6 +24,7 @@
     "zbanx-ai/zbanx-ui/platform-icon",
     "zbanx-ai/zbanx-ui/popover-confirm",
     "zbanx-ai/zbanx-ui/query-list",
+    "zbanx-ai/zbanx-ui/quote-source-badge",
     "zbanx-ai/zbanx-ui/responsive-filter-layout",
     "zbanx-ai/zbanx-ui/tag-input",
     "zbanx-ai/zbanx-ui/tag-list",

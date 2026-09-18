@@ -154,7 +154,13 @@ function QueryListFooter<TItem>({
       {footerExtra && (
         <div className="flex min-w-0 flex-1 items-center justify-end gap-3">
           {typeof footerExtra === "function"
-            ? footerExtra({ pageCount, total, isError, retry })
+            ? footerExtra({
+                pageCount,
+                loadedCount: items.length,
+                total,
+                isError,
+                retry,
+              })
             : footerExtra}
         </div>
       )}

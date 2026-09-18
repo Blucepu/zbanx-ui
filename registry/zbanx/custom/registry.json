@@ -157,8 +157,9 @@
         }
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/utils",
-        "zbanx-ai/zbanx-ui/oss-image"
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/oss-image",
+        "zbanx-ai/zbanx-ui/utils"
       ],
       "dependencies": [
         "lucide-react"
@@ -247,6 +248,11 @@
           "path": "creator-filter-core/format.ts",
           "type": "registry:component",
           "target": "@components/custom/creator-filter-core/format.ts"
+        },
+        {
+          "path": "creator-filter-core/pinned.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-filter-core/pinned.ts"
         }
       ],
       "registryDependencies": []
@@ -414,15 +420,22 @@
           "path": "creator-list-item/creator-avatar.tsx",
           "type": "registry:component",
           "target": "@components/custom/creator-list-item/creator-avatar.tsx"
+        },
+        {
+          "path": "creator-list-item/metric-freshness.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-list-item/metric-freshness.ts"
         }
       ],
       "registryDependencies": [
         "zbanx-ai/zbanx-ui/avatar",
         "zbanx-ai/zbanx-ui/badge",
-        "zbanx-ai/zbanx-ui/button",
         "zbanx-ai/zbanx-ui/checkbox",
         "zbanx-ai/zbanx-ui/clamped-text",
+        "zbanx-ai/zbanx-ui/cooperation-price-field",
         "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/icon-button",
         "zbanx-ai/zbanx-ui/link",
         "zbanx-ai/zbanx-ui/number",
         "zbanx-ai/zbanx-ui/oss-image",
@@ -450,19 +463,23 @@
         }
       ],
       "registryDependencies": [
-        "zbanx-ai/zbanx-ui/creator-list-item",
-        "zbanx-ai/zbanx-ui/tag-list",
-        "zbanx-ai/zbanx-ui/video-cover",
-        "zbanx-ai/zbanx-ui/country-flag",
         "zbanx-ai/zbanx-ui/button",
-        "zbanx-ai/zbanx-ui/sheet",
-        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/card",
+        "zbanx-ai/zbanx-ui/country-flag",
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/creator-list-item",
         "zbanx-ai/zbanx-ui/link",
-        "zbanx-ai/zbanx-ui/utils"
+        "zbanx-ai/zbanx-ui/quote-source-badge",
+        "zbanx-ai/zbanx-ui/scroll-area",
+        "zbanx-ai/zbanx-ui/sheet",
+        "zbanx-ai/zbanx-ui/skeleton",
+        "zbanx-ai/zbanx-ui/tooltip",
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/video-cover"
       ],
       "dependencies": [
         "lucide-react",
-        "react-icons"
+        "@tanstack/react-query"
       ]
     },
     {
@@ -489,7 +506,8 @@
         "zbanx-ai/zbanx-ui/empty",
         "zbanx-ai/zbanx-ui/icon-button",
         "zbanx-ai/zbanx-ui/number",
-        "zbanx-ai/zbanx-ui/utils"
+        "zbanx-ai/zbanx-ui/utils",
+        "zbanx-ai/zbanx-ui/creator-sort"
       ],
       "dependencies": [
         "lucide-react",
@@ -596,6 +614,70 @@
       ],
       "registryDependencies": [
         "zbanx-ai/zbanx-ui/select",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "creator-sort",
+      "type": "registry:component",
+      "title": "Creator Sort",
+      "description": "Creator sort popover with per-field ASC/DESC toggles.",
+      "files": [
+        {
+          "path": "creator-sort/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/creator-sort/index.tsx"
+        },
+        {
+          "path": "creator-sort/config.ts",
+          "type": "registry:component",
+          "target": "@components/custom/creator-sort/config.ts"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/creator-filter-core",
+        "zbanx-ai/zbanx-ui/button",
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "cooperation-price-field",
+      "type": "registry:component",
+      "title": "Cooperation Price Field",
+      "description": "Cooperation mode price row with inquiry history popover.",
+      "files": [
+        {
+          "path": "cooperation-price-field/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/cooperation-price-field/index.tsx"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/popover",
+        "zbanx-ai/zbanx-ui/utils"
+      ]
+    },
+    {
+      "name": "quote-source-badge",
+      "type": "registry:component",
+      "title": "Quote Source Badge",
+      "description": "Badge for quotation source with optional stale marker.",
+      "files": [
+        {
+          "path": "quote-source-badge/index.tsx",
+          "type": "registry:component",
+          "target": "@components/custom/quote-source-badge/index.tsx"
+        }
+      ],
+      "registryDependencies": [
+        "zbanx-ai/zbanx-ui/badge",
         "zbanx-ai/zbanx-ui/utils"
       ]
     }

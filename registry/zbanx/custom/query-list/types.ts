@@ -28,6 +28,8 @@ export interface QueryListRef<TItem> {
 export interface QueryListFooterInfo {
   /** 已加载页数 */
   pageCount: number;
+  /** 已加载条数 */
+  loadedCount: number;
   /** 服务端总数 */
   total: number;
   /** 当前是否有查询错误 */

@@ -35,10 +35,10 @@ export default function CountryFlag({
   );
 
   return (
-    <div className="flex items-center gap-1.5">
+    <span className="inline-flex shrink-0 items-center gap-1.5">
       {iconPosition === "start" && icon}
-      {showName && <div className="truncate">{name}</div>}
+      {showName && <span className="truncate whitespace-nowrap">{name}</span>}
       {iconPosition === "end" && icon}
-    </div>
+    </span>
   );
 }

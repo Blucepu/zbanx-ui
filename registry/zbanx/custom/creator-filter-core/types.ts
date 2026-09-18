@@ -51,8 +51,31 @@ export interface CreatorFilterValues {
 
 export type FilterLabelSnapshot = Record<string, Record<string, string>>;
 
+/** 后端排序字段（与 creatorChannelListV2 orderBy field 同值，纯展示层字面量） */
+export type CreatorSortField =
+  | "quantity"
+  | "avg_view"
+  | "avg_view_rate"
+  | "avg_like_view_rate"
+  | "avg_engagement_rate"
+  | "last_published_at"
+  | "avg_like"
+  | "avg_comment";
+
+/** 后端排序方向（与 creatorChannelListV2 orderBy direction 同值） */
+export type SortDirection = "ASC" | "DESC";
+
+export interface CreatorSortValue {
+  field: CreatorSortField;
+  direction: SortDirection;
+}
+
 export interface PersistedCreatorFilterValues extends CreatorFilterValues {
   __labels?: FilterLabelSnapshot;
+  /** 排序（与筛选同 envelope 持久化，不计入筛选项计数，不进入 where） */
+  sort?: CreatorSortValue | null;
+  /** 列表头固定偏好（与筛选同 envelope 持久化，不计入筛选项计数，不进入 where/queryKey） */
+  __pinned?: CreatorFilterFieldKey[];
 }
 
 export type CreatorFilterFieldKey = keyof CreatorFilterValues;
@@ -79,7 +102,6 @@ export interface CreatorFilterFieldConfig {
   type: CreatorFilterFieldType;
   placeholder?: string;
   unsupported?: boolean;
-  /** 固定在列表头展示：无选中值时也常驻显示触发入口 */
   pin?: boolean;
   triStateLabels?: { true: string; false: string };
   presetConfig?: NumberPresetFieldConfig;

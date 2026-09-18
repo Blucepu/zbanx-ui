@@ -15,6 +15,15 @@ export interface CreatorVideoRaw {
   totalView?: number | null;
 }
 
+export interface CreatorPriceInquiryRaw {
+  id: string | number;
+  cooperationMode?: string | null;
+  cooperationModes?: string[] | null;
+  inquiryMin?: number | null;
+  inquiryMax?: number | null;
+  createdAt?: string | null;
+}
+
 export interface CreatorChannelRaw {
   id: string;
   channelName?: string | null;
@@ -30,18 +39,27 @@ export interface CreatorChannelRaw {
   description?: string | null;
   uniqueID?: string | null;
   crawlerUpdatedAt?: string | null;
-  creator?: { name?: string | null } | null;
+  creatorID?: string | number | null;
+  creator?: {
+    id?: string | number | null;
+    name?: string | null;
+    inquiries?: CreatorPriceInquiryRaw[] | null;
+  } | null;
   summary?: {
     videoCount?: number | null;
     viewCount?: number | null;
     avgView?: number | null;
     avgEngagementRate?: number | null;
+    lastPublishedAt?: string | null;
   } | null;
   flinkChannel?: {
     verticalCategory?: unknown;
     primaryVerticalCategory?: unknown;
     contentType?: unknown;
     isHighFrequency?: boolean | null;
+    crawlerUpdatedAt?: string | null;
+    baseUpdatedAt?: string | null;
+    cpm?: number | null;
   } | null;
   manualCategoryTypes?: unknown;
   channelTypeCooperationModes?: string[] | null;
@@ -94,6 +112,7 @@ function relativeAgo(iso?: string | null): string | undefined {
 export function adaptChannel(
   raw: CreatorChannelRaw
 ): CreatorChannelLite & { updatedAgo?: string } {
+  const creatorIdRaw = raw.creatorID ?? raw.creator?.id;
   return {
     id: raw.id,
     channelName: raw.channelName,
@@ -106,6 +125,8 @@ export function adaptChannel(
         ? COUNTRY_NAMES[raw.countryCode.toUpperCase()]
         : raw.countryCode || undefined,
     handle: raw.creator?.name ?? raw.uniqueID,
+    creatorId:
+      creatorIdRaw == null || creatorIdRaw === "" ? null : String(creatorIdRaw),
     official: raw.official,
     unavailable: raw.available === false,
     highFrequency: raw.flinkChannel?.isHighFrequency ?? false,
@@ -113,6 +134,19 @@ export function adaptChannel(
     totalViews: raw.flow ?? raw.summary?.viewCount,
     avgViews: raw.summary?.avgView,
     engagementRate: raw.summary?.avgEngagementRate,
+    videoCount: raw.summary?.videoCount,
+    lastPublishedAt: raw.summary?.lastPublishedAt,
+    cpm: raw.flinkChannel?.cpm,
+    flinkCrawlerUpdatedAt: raw.flinkChannel?.crawlerUpdatedAt,
+    flinkBaseUpdatedAt: raw.flinkChannel?.baseUpdatedAt,
+    inquiries: (raw.creator?.inquiries ?? []).map((q) => ({
+      id: String(q.id),
+      cooperationMode: q.cooperationMode,
+      cooperationModes: q.cooperationModes,
+      inquiryMin: q.inquiryMin,
+      inquiryMax: q.inquiryMax,
+      createdAt: q.createdAt,
+    })),
     description: raw.description,
     primaryCategories: flattenStrings(
       raw.flinkChannel?.primaryVerticalCategory
